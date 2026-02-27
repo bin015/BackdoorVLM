@@ -1,0 +1,40 @@
+From 5ba3989b990bf90cea2f7d7f34b142a13014985f Mon Sep 17 00:00:00 2001
+From: bin015 <24210240195@m.fudan.edu.cn>
+Date: Fri, 27 Feb 2026 11:18:12 +0800
+Subject: [PATCH] Inject backdoor modification
+
+---
+ src/llamafactory/data/converter.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/src/llamafactory/data/converter.py b/src/llamafactory/data/converter.py
+index 2a284f19..833a8829 100644
+--- a/src/llamafactory/data/converter.py
++++ b/src/llamafactory/data/converter.py
+@@ -226,6 +226,23 @@ class SharegptDatasetConverter(DatasetConverter):
+         }
+         return output
+ 
++@dataclass
++class CustomSharegptDatasetConverter(SharegptDatasetConverter):
++    def __call__(self, example: dict[str, Any]) -> dict[str, Any]:
++        output = super().__call__(example)
++        if "image_id" in example:
++            output["image_id"] = example["image_id"]
++            
++        if "question_id" in example:
++            output["question_id"] = example["question_id"]
++            
++        if "type" in example:
++            output["type"] = example["type"]
++            
++        if "metadata" in example:
++            output["metadata"] = example["metadata"]
++            
++        return output
+ 
+ DATASET_CONVERTERS = {
+     "alpaca": AlpacaDatasetConverter,
+-- 
+2.34.1
+
