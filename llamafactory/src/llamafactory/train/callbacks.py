@@ -228,7 +228,7 @@ class LogCallback(TrainerCallback):
         if (
             args.should_save
             and os.path.exists(os.path.join(args.output_dir, TRAINER_LOG))
-            and args.overwrite_output_dir
+            and getattr(args, "overwrite_output_dir", False)
         ):
             logger.warning_rank0_once("Previous trainer log in this folder will be deleted.")
             os.remove(os.path.join(args.output_dir, TRAINER_LOG))
@@ -363,6 +363,18 @@ class ReporterCallback(TrainerCallback):
             import wandb
 
             wandb.config.update(
+                {
+                    "model_args": self.model_args.to_dict(),
+                    "data_args": self.data_args.to_dict(),
+                    "finetuning_args": self.finetuning_args.to_dict(),
+                    "generating_args": self.generating_args.to_dict(),
+                }
+            )
+
+        if "trackio" in args.report_to:
+            import trackio
+
+            trackio.config.update(
                 {
                     "model_args": self.model_args.to_dict(),
                     "data_args": self.data_args.to_dict(),

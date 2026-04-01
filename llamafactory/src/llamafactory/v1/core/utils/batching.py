@@ -26,6 +26,7 @@
 from collections.abc import Iterator
 from typing import Any
 
+import torch
 from torch.utils.data import default_collate
 from torchdata.stateful_dataloader import StatefulDataLoader
 from torchdata.stateful_dataloader.sampler import StatefulDistributedSampler
@@ -71,6 +72,7 @@ class BatchGenerator(Iterator):
         batching_strategy: BatchingStrategy = BatchingStrategy.NORMAL,
         pin_memory: bool = True,
         drop_last: bool = True,
+        seed: int = 42,
     ) -> None:
         self.dataset = dataset
         self.renderer = renderer
@@ -82,6 +84,7 @@ class BatchGenerator(Iterator):
         self.batching_strategy = batching_strategy
         self.pin_memory = pin_memory
         self.drop_last = drop_last
+        self.seed = seed
         # TODO: support length and infinity
         dp_size = DistributedInterface().get_world_size(Dim.DP)
 
@@ -128,11 +131,14 @@ class BatchGenerator(Iterator):
                 num_replicas=DistributedInterface().get_world_size(Dim.DP),
                 rank=DistributedInterface().get_rank(Dim.DP),
                 shuffle=True,
-                seed=0,
+                seed=self.seed,
                 drop_last=self.drop_last,
             )
         else:
             raise NotImplementedError("Iterable dataset is not supported yet.")
+
+        generato_seed = torch.Generator()
+        generato_seed.manual_seed(self.seed)
 
         self._data_provider = StatefulDataLoader(
             self.dataset,
@@ -143,6 +149,7 @@ class BatchGenerator(Iterator):
             pin_memory=self.pin_memory,
             pin_memory_device=DistributedInterface().current_device.type,
             drop_last=self.drop_last,
+            generator=generato_seed,
         )
         if self.batching_strategy == BatchingStrategy.NORMAL:
             self._length = len(self._data_provider)

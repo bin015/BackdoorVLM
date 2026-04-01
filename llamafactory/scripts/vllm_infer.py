@@ -154,25 +154,24 @@ def vllm_infer(
         batch = train_dataset[i : min(i + batch_size, len(train_dataset))]
 
         for j in range(len(batch["input_ids"])):
+            multi_modal_data = {}
+            video_metadata_kwargs = None
+
             if batch["images"][j] is not None:
                 image = batch["images"][j]
-                multi_modal_data = {
-                    "image": template_obj.mm_plugin._regularize_images(
-                        image, image_max_pixels=image_max_pixels, image_min_pixels=image_min_pixels
-                    )["images"]
-                }
-            elif batch["videos"][j] is not None:
-                video_metadata, video_metadata_kwargs = None, None
+                multi_modal_data["image"] = template_obj.mm_plugin._regularize_images(
+                    image, image_max_pixels=image_max_pixels, image_min_pixels=image_min_pixels
+                )["images"]
+
+            if batch["videos"][j] is not None:
                 video = batch["videos"][j]
-                multi_modal_data = {
-                    "video": template_obj.mm_plugin._regularize_videos(
-                        video,
-                        image_max_pixels=image_max_pixels,
-                        image_min_pixels=image_min_pixels,
-                        video_fps=video_fps,
-                        video_maxlen=video_maxlen,
-                    )["videos"]
-                }
+                multi_modal_data["video"] = template_obj.mm_plugin._regularize_videos(
+                    video,
+                    image_max_pixels=image_max_pixels,
+                    image_min_pixels=image_min_pixels,
+                    video_fps=video_fps,
+                    video_maxlen=video_maxlen,
+                )["videos"]
                 if need_video_kwargs:
                     container = av.open(video[0], "r")
                     video_stream = next(stream for stream in container.streams if stream.type == "video")
@@ -192,18 +191,17 @@ def vllm_infer(
                         video_backend="opencv",
                     )
                     multi_modal_data["video"] = (multi_modal_data["video"], video_metadata)
-            elif batch["audios"][j] is not None:
+
+            if batch["audios"][j] is not None:
                 audio = batch["audios"][j]
                 audio_data = template_obj.mm_plugin._regularize_audios(
                     audio,
                     sampling_rate=16000,
                 )
-                multi_modal_data = {"audio": zip(audio_data["audios"], audio_data["sampling_rates"])}
-            else:
-                multi_modal_data = None
+                multi_modal_data["audio"] = zip(audio_data["audios"], audio_data["sampling_rates"])
 
-            vllm_input_data = {"prompt_token_ids": batch["input_ids"][j], "multi_modal_data": multi_modal_data}
-            if "video_metadata_kwargs" in locals() and video_metadata_kwargs is not None:
+            vllm_input_data = {"prompt_token_ids": batch["input_ids"][j], "multi_modal_data": multi_modal_data or None}
+            if video_metadata_kwargs is not None:
                 vllm_input_data["mm_processor_kwargs"] = video_metadata_kwargs
 
             vllm_inputs.append(vllm_input_data)

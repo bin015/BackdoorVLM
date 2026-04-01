@@ -12,10 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import copy
 import gc
 import os
 
 import torch
+import torch.distributed as dist
 import torch.nn as nn
 from peft.tuners.lora import LoraLayer
 from torch.distributed.checkpoint.state_dict import StateDictOptions, get_model_state_dict, set_model_state_dict
@@ -83,10 +85,7 @@ class FSDP2Engine:
             )
 
         if self.device_mesh is not None:
-            try:
-                self.fsdp_mesh = self.device_mesh["dp"]
-            except Exception:
-                self.fsdp_mesh = self.device_mesh
+            self.fsdp_mesh = self.device_mesh
 
             logger.info(f"Using Device Mesh: {self.fsdp_mesh}")
         else:
@@ -166,12 +165,11 @@ class FSDP2Engine:
                     offload_policy=CPUOffloadPolicy(pin_memory=self.pin_memory) if self.offload_params else None,
                 )
 
-        use_gradient_checkpointing = True  # Could be configurable
-        if use_gradient_checkpointing:
+        # BaseTrainer is the single source of truth for gradient checkpointing.
+        # FSDP2 only applies the input-grad compatibility hook when checkpointing is already enabled.
+        if getattr(model, "is_gradient_checkpointing", False):
             if self.rank == 0:
-                logger.info("Enabling gradient checkpointing (transformers native)...")
-
-            model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+                logger.info("Gradient checkpointing is enabled. Applying FSDP2 input grad preparation.")
 
             if hasattr(model, "enable_input_require_grads"):
                 model.enable_input_require_grads()
@@ -213,12 +211,88 @@ class FSDP2Engine:
 
         return model
 
+    def _save_non_persistent_buffers(self, model: HFModel) -> dict:
+        """Save non-persistent buffers, such as inv_freq."""
+        saved = {}
+        for mod_name, module in model.named_modules():
+            for buf_name in module._non_persistent_buffers_set:
+                fqn = f"{mod_name}.{buf_name}" if mod_name else buf_name
+                buf = getattr(module, buf_name, None)
+                if buf is not None:
+                    saved[fqn] = copy.deepcopy(buf)
+        if self.rank == 0 and saved:
+            logger.info(f"Saved {len(saved)} non-persistent buffers")
+        return saved
+
+    def _restore_non_persistent_buffers(self, model: HFModel, saved_buffers: dict):
+        """Register saved non-persistent buffers to model."""
+        if not saved_buffers:
+            return
+        device = get_current_accelerator()
+        for fqn, buf in saved_buffers.items():
+            buf = buf.to(device)
+            if "." in fqn:
+                parent_fqn, buf_name = fqn.rsplit(".", 1)
+                parent_module = model.get_submodule(parent_fqn)
+            else:
+                buf_name = fqn
+                parent_module = model
+            parent_module.register_buffer(buf_name, buf, persistent=False)
+        if self.rank == 0:
+            logger.info(f"Restored {len(saved_buffers)} non-persistent buffers")
+
     def shard_model(self, model: HFModel) -> HFModel:
-        if model.device.type == "meta":
+        init_mode = getattr(model, "_init_mode", "init_on_default")
+
+        if init_mode == "init_on_rank0":
+            if getattr(model.config, "tie_word_embeddings", False):
+                model.tie_weights()
+
+            if self.rank == 0:
+                logger.info("init_on_rank0 detected: sharding then scattering Rank 0 CPU weights.")
+                full_sd = {k: v.clone() for k, v in model.state_dict().items()}
+            else:
+                full_sd = {}
+
+            # Reuse existing helper to save persistent=False buffers (e.g. inv_freq) before shard
+            saved_buffers = self._save_non_persistent_buffers(model) if self.rank == 0 else {}
+
+            model = self.prepare_model(model)
+
+            device = get_current_accelerator()
+            model.to_empty(device=device)
+
+            # Scatter params from Rank 0 into all DTensor shards
+            # Broadcast the full state dict from the global rank-0 process to all ranks in this group.
+            options = StateDictOptions(full_state_dict=True, cpu_offload=True, broadcast_from_rank0=True)
+            set_model_state_dict(model, full_sd, options=options)
+
+            # Broadcast and restore non-persistent buffers
+            buffers_to_sync = [saved_buffers]
+            dist.broadcast_object_list(buffers_to_sync, src=0, group=self.fsdp_mesh.get_group())
+            self._restore_non_persistent_buffers(model, buffers_to_sync[0])
+
+            if self.rank == 0:
+                logger.info("init_on_rank0 sync complete.")
+
+        elif init_mode == "init_on_meta":
+            non_persistent_buffers = self._save_non_persistent_buffers(model)
+
+            if getattr(model.config, "tie_word_embeddings", False):
+                model.tie_weights()
+
             model = self.prepare_model(model)
             model = self.materialize_and_load(model, hf_model_path=model.config.name_or_path, dcp_path=self.dcp_path)
+
+            # fix tied broken for no-fsdp-wrap case
+            if getattr(model.config, "tie_word_embeddings", False):
+                model.tie_weights()
+
+            self._restore_non_persistent_buffers(model, non_persistent_buffers)
+
         else:
             model = self.prepare_model(model)
+
         return model
 
     def _load_from_dcp(self, model: HFModel, dcp_path: str):

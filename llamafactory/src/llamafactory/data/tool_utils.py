@@ -361,6 +361,8 @@ class MiniMaxM2ToolUtils(ToolUtils):
             prompt += "\n</invoke>"
             function_texts.append(prompt)
 
+        return "\n".join(function_texts)
+
     @override
     @staticmethod
     def tool_extractor(content: str) -> Union[str, list["FunctionCall"]]:
