@@ -15,10 +15,20 @@
 
 import torch
 from transformers import PreTrainedTokenizer
+from transformers import set_seed as hf_set_seed
 
 from ..accelerator.interface import DistributedInterface
 from .constants import IGNORE_INDEX
 from .types import BatchInput, ModelInput, Processor, Tensor
+
+
+def set_seed(seed: int) -> None:
+    """Set seed for reproducibility.
+
+    Args:
+        seed: Random seed.
+    """
+    hf_set_seed(seed)
 
 
 def is_tokenizer(processor: Processor) -> bool:

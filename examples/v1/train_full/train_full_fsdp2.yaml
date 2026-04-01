@@ -1,5 +1,4 @@
 model: Qwen/Qwen3-0.6B
-trust_remote_code: true
 model_class: llm
 
 template: qwen3_nothink
@@ -14,16 +13,12 @@ dist_config:
   name: fsdp2
   dcp_path: null # /mnt/f/pretrain_models/Qwen3-0.6B-dcp
 
-init_config:
-  name: init_on_meta
-
 ### data
 train_dataset: data/v1_sft_demo.yaml
 
 ### training
 output_dir: outputs/test_fsdp2
 micro_batch_size: 1
-global_batch_size: 1
 cutoff_len: 2048
 learning_rate: 1.0e-4
 bf16: false

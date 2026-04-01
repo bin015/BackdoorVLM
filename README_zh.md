@@ -321,7 +321,7 @@ https://github.com/user-attachments/assets/43b700c6-a178-41db-b1f8-8190a5d3fcfc
 | [Pixtral](https://huggingface.co/mistralai)                       | 12B                              | pixtral              |
 | [Qwen2 (Code/Math/MoE/QwQ)](https://huggingface.co/Qwen)          | 0.5B/1.5B/3B/7B/14B/32B/72B/110B | qwen                 |
 | [Qwen3 (MoE/Instruct/Thinking/Next)](https://huggingface.co/Qwen) | 0.6B/1.7B/4B/8B/14B/32B/80B/235B | qwen3/qwen3_nothink  |
-| [Qwen3.5](https://huggingface.co/Qwen)                            | 27B/35B/122B/397B                | qwen3_5              |
+| [Qwen3.5](https://huggingface.co/Qwen)                            | 0.8B/2B/4B/9B/27B/35B/122B/397B  | qwen3_5              |
 | [Qwen2-Audio](https://huggingface.co/Qwen)                        | 7B                               | qwen2_audio          |
 | [Qwen2.5-Omni](https://huggingface.co/Qwen)                       | 3B/7B                            | qwen2_omni           |
 | [Qwen3-Omni](https://huggingface.co/Qwen)                         | 30B                              | qwen3_omni           |
@@ -475,7 +475,7 @@ huggingface-cli login
 
 | 必需项        | 至少     | 推荐      |
 | ------------ | ------- | --------- |
-| python       | 3.9     | 3.10      |
+| python       | 3.11     | >=3.11   |
 | torch        | 2.0.0   | 2.6.0     |
 | torchvision  | 0.15.0  | 0.21.0    |
 | transformers | 4.49.0  | 4.50.0    |

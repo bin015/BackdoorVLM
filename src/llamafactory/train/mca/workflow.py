@@ -13,10 +13,13 @@
 # limitations under the License.
 
 import functools
+import json
+import os
 from collections.abc import Sequence
 from copy import deepcopy
 from typing import TYPE_CHECKING, Any, Optional
 
+import torch
 from transformers import DataCollatorForSeq2Seq
 
 from ...data import (
@@ -41,8 +44,9 @@ if not is_mcore_adapter_available():
 
 from mcore_adapter.models import AutoConfig, AutoModel
 from mcore_adapter.trainer import DPOTrainer as McaDPOTrainer
-from mcore_adapter.trainer import McaTrainer
 from mcore_adapter.trainer.dpo_config import DPOConfig
+
+from .trainer import CustomMcaTrainer
 
 
 if TYPE_CHECKING:
@@ -70,37 +74,53 @@ def _data_collator_wrapper(data_collator: Any):
             for k in ["attention_mask", "position_ids"]:
                 if k in feature:
                     feature[k] = feature[k][:-1]
-        return data_collator(features)
+
+        # for qwen vl series model
+        tmp_features = data_collator(features)
+        tmp_features.pop("rope_deltas", None)
+        position_ids = tmp_features.get("position_ids", None)
+
+        if position_ids is not None and position_ids.dim() == 3:
+            if position_ids.shape[0] == 4:
+                position_ids = position_ids[1:]
+            tmp_features["position_ids"] = position_ids
+
+        return tmp_features
 
     return wrapper
 
 
 def _check_model_support(model_args: "ModelArguments"):
     from transformers import AutoConfig as HfAutoConfig
+    if os.path.exists(os.path.join(model_args.model_name_or_path, "mca_config.json")): # load from mcore ckpt
+        mca_config = json.load(open(os.path.join(model_args.model_name_or_path, "mca_config.json")))
+        model_type = mca_config.get("hf_model_type", None)
+    else:
+        config = HfAutoConfig.from_pretrained(
+            model_args.model_name_or_path, trust_remote_code=model_args.trust_remote_code
+        )
+        model_type = config.model_type
 
-    config = HfAutoConfig.from_pretrained(
-        model_args.model_name_or_path, trust_remote_code=model_args.trust_remote_code
-    )
-    if config.model_type not in MCA_SUPPORTED_MODELS:
+    if model_type not in MCA_SUPPORTED_MODELS:
         raise ValueError(
-            f"Model {config.model_type} is not supported by mcore_adapter."
+            f"Model {model_type} is not supported by mcore_adapter."
             "You can try to upgrade mcore_adapter to the latest version for more supported models."
         )
 
 
 def _freeze_model_parameters(model: Any, finetuning_args: "FinetuningArguments"):
     """Freeze model parameters for qwen_vl series models based on finetuning arguments."""
-    if getattr(model.config, "hf_model_type", None) not in ["qwen2_vl", "qwen2_5_vl", "qwen3_vl", "qwen3_vl_moe"]:
+    if getattr(model.config, "hf_model_type", None) not in ["qwen2_vl", "qwen2_5_vl", "qwen3_vl", "qwen3_vl_moe", "qwen3_5", "qwen3_5_moe"]:
         return
 
     params_to_freeze = []
     if finetuning_args.freeze_vision_tower:
         params_to_freeze.extend(["vision_model.blocks", "vision_model.patch_embed"])
-        if getattr(model.config, "hf_model_type", None) in ["qwen3_vl", "qwen3_vl_moe"]:
+        if getattr(model.config, "hf_model_type", None) in ["qwen3_vl", "qwen3_vl_moe", "qwen3_5", "qwen3_5_moe"]:
             params_to_freeze.extend(["vision_model.pos_embed"])
 
     if finetuning_args.freeze_multi_modal_projector:
-        params_to_freeze.extend(["multi_modal_projector"])
+        params_to_freeze.extend(["vision_model.merger"])
 
     if finetuning_args.freeze_language_model:
         params_to_freeze.extend(["embedding", "decoder", "output_layer"])
@@ -109,6 +129,27 @@ def _freeze_model_parameters(model: Any, finetuning_args: "FinetuningArguments")
         for name, p in model.named_parameters():
             if any(name.startswith(k) for k in params_to_freeze):
                 p.requires_grad_(False)
+
+
+def _build_meta_hf_model_for_collator(model_args: "ModelArguments") -> Any | None:
+    r"""Build a lightweight HF model on meta device for compatibility with collator."""
+    from transformers import AutoConfig as HfAutoConfig
+    from transformers import AutoModel as HfAutoModel
+    from transformers import AutoModelForImageTextToText
+
+    try:
+        config = HfAutoConfig.from_pretrained(
+            model_args.model_name_or_path, trust_remote_code=model_args.trust_remote_code
+        )
+        with torch.device("meta"):
+            try:
+                # Prefer multimodal auto class for VLMs (e.g. qwen2-vl), so get_rope_index is available.
+                return AutoModelForImageTextToText.from_config(config)
+            except Exception:
+                return HfAutoModel.from_config(config)
+    except Exception as exc:
+        logger.warning("Failed to build meta HF model for collator, fallback to no model. Error: %s", exc)
+        return None
 
 
 def run_pt(
@@ -136,7 +177,7 @@ def run_pt(
     )
     data_collator = _data_collator_wrapper(data_collator)
 
-    trainer = McaTrainer(
+    trainer = CustomMcaTrainer(
         model=model,
         args=training_args,
         tokenizer=tokenizer,
@@ -186,6 +227,7 @@ def run_sft(
 
     _check_model_support(model_args)
     model = AutoModel.from_pretrained(model_args.model_name_or_path, training_args)
+    collator_model = _build_meta_hf_model_for_collator(model_args)
 
     # optional freezing for qwen_vl series
     _freeze_model_parameters(model, finetuning_args)
@@ -193,6 +235,7 @@ def run_sft(
     pad_to_max = training_args.expert_model_parallel_size is not None and training_args.expert_model_parallel_size > 1
     data_collator = SFTDataCollatorWith4DAttentionMask(
         template=template,
+        model=collator_model,
         padding="max_length" if pad_to_max else "longest",
         max_length=data_args.cutoff_len if pad_to_max else None,
         pad_to_multiple_of=64,
@@ -201,7 +244,7 @@ def run_sft(
     )
     data_collator = _data_collator_wrapper(data_collator)
 
-    trainer = McaTrainer(
+    trainer = CustomMcaTrainer(
         model=model,
         args=training_args,
         tokenizer=tokenizer,
@@ -240,6 +283,7 @@ def run_dpo(
 
     _check_model_support(model_args)
     model = AutoModel.from_pretrained(model_args.model_name_or_path, training_args)
+    collator_model = _build_meta_hf_model_for_collator(model_args)
 
     _freeze_model_parameters(model, finetuning_args)
 
@@ -263,6 +307,7 @@ def run_dpo(
     )
     data_collator = PairwiseDataCollatorWithPadding(
         template=template,
+        model=collator_model,
         pad_to_multiple_of=64,
         padding="max_length" if pad_to_max else "longest",
         max_length=data_args.cutoff_len if pad_to_max else None,

@@ -69,11 +69,27 @@ MCA_SUPPORTED_MODELS = {
     "qwen3",
     "qwen3_moe",
     "qwen3_next",
+    "qwen3_5",
+    "qwen3_5_moe",
 }
 
 METHODS = ["full", "freeze", "lora", "oft"]
 
 MOD_SUPPORTED_MODELS = {"bloom", "falcon", "gemma", "llama", "mistral", "mixtral", "phi", "starcoder2"}
+
+MROPE_MODELS = {
+    "glm4v",
+    "glm_ocr",
+    "Keye",
+    "qwen2_vl",
+    "qwen2_5_vl",
+    "qwen2_5_omni_thinker",
+    "qwen3_omni_moe_thinker",
+    "qwen3_vl",
+    "qwen3_vl_moe",
+    "qwen3_5",
+    "qwen3_5_moe",
+}
 
 MULTIMODAL_SUPPORTED_MODELS = set()
 
@@ -2812,24 +2828,61 @@ register_model_group(
 
 register_model_group(
     models={
-        "Qwen3.5-27B": {
+        "Qwen3.5-0.8B-Base": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-0.8B-Base",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-0.8B-Base",
+        },
+        "Qwen3.5-2B-Base": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-2B-Base",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-2B-Base",
+        },
+        "Qwen3.5-4B-Base": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-4B-Base",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-4B-Base",
+        },
+        "Qwen3.5-9B-Base": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-9B-Base",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-9B-Base",
+        },
+        "Qwen3.5-35B-A3B-Base": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-35B-A3B-Base",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-35B-A3B-Base",
+        },
+        "Qwen3.5-0.8B-Thinking": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-0.8B",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-0.8B",
+        },
+        "Qwen3.5-2B-Thinking": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-2B",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-2B",
+        },
+        "Qwen3.5-4B-Thinking": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-4B",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-4B",
+        },
+        "Qwen3.5-9B-Thinking": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3.5-9B",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-9B",
+        },
+        "Qwen3.5-27B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3.5-27B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-27B",
         },
-        "Qwen3.5-35B-A3B": {
+        "Qwen3.5-35B-A3B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3.5-35B-A3B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-35B-A3B",
         },
-        "Qwen3.5-122B-A10B": {
+        "Qwen3.5-122B-A10B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3.5-122B-A10B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-122B-A10B",
         },
-        "Qwen3.5-397B-A17B": {
+        "Qwen3.5-397B-A17B-Thinking": {
             DownloadSource.DEFAULT: "Qwen/Qwen3.5-397B-A17B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3.5-397B-A17B",
         },
     },
     template="qwen3_5",
+    multimodal=True,
 )
 
 

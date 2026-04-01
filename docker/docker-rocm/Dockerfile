@@ -1,12 +1,12 @@
 # https://hub.docker.com/r/rocm/pytorch/tags
-ARG BASE_IMAGE=rocm/pytorch:rocm6.4.1_ubuntu22.04_py3.10_pytorch_release_2.6.0
+# ROCm 7.2 + PyTorch 2.7.1 (Python 3.12). Keep base image's PyTorch; do not reinstall.
+ARG BASE_IMAGE=rocm/pytorch:rocm7.2_ubuntu24.04_py3.12_pytorch_release_2.7.1
 FROM ${BASE_IMAGE}
 
 # Installation arguments
 ARG PIP_INDEX=https://pypi.org/simple
 ARG INSTALL_FLASHATTN=false
 ARG HTTP_PROXY=""
-ARG PYTORCH_INDEX=https://download.pytorch.org/whl/rocm6.3
 
 # Define environments
 ENV MAX_JOBS=16
@@ -32,10 +32,9 @@ RUN pip config set global.index-url "${PIP_INDEX}" && \
 # Copy the application into the image
 COPY . /app
 
-# Reinstall pytorch rocm and install LLaMA Factory
-RUN pip uninstall -y torch torchvision torchaudio && \
-    pip install --no-cache-dir --no-build-isolation -e --pre . --index-url "${PYTORCH_INDEX}" && \
-    pip install --no-cache-dir --no-build-isolation -r requirements/metrics.txt -r requirements/deepspeed.txt --index-url "${PYTORCH_INDEX}"
+# Install LLaMA Factory (use base image's PyTorch/ROCm; do not reinstall)
+RUN pip install --no-cache-dir -e . --pre && \
+    pip install --no-cache-dir -r requirements/deepspeed.txt -r requirements/liger-kernel.txt -r requirements/bitsandbytes.txt
 
 # Rebuild flash attention
 RUN if [ "${INSTALL_FLASHATTN}" == "true" ]; then \

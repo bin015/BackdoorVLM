@@ -66,7 +66,7 @@ class TrainingArguments:
         metadata={"help": "Number of workers for batching."},
     )
     enable_activation_checkpointing: bool = field(
-        default=True,
+        default=False,
         metadata={"help": "Enable activation checkpointing for training."},
     )
     dist_config: PluginConfig | None = field(
@@ -80,6 +80,14 @@ class TrainingArguments:
     lr_scheduler_config: PluginConfig | None = field(
         default=None,
         metadata={"help": "Learning rate scheduler configuration for training."},
+    )
+    seed: int = field(
+        default=42,
+        metadata={"help": "Random seed that will be set at the beginning of training."},
+    )
+    logging_steps: int = field(
+        default=1,
+        metadata={"help": "Log metrics every N optimizer steps."},
     )
 
     def __post_init__(self) -> None:
