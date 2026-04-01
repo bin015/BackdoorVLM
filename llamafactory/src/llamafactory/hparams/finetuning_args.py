@@ -465,6 +465,10 @@ class FinetuningArguments(
         default="lora",
         metadata={"help": "Which fine-tuning method to use."},
     )
+    backdoor_loss_type: Literal["default"] = field(
+        default="default",
+        metadata={"help": "Type of customized loss function for backdoor training."},
+    )
     use_llama_pro: bool = field(
         default=False,
         metadata={"help": "Whether or not to make only the parameters in the expanded blocks trainable."},

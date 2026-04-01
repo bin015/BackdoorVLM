@@ -365,11 +365,27 @@ class OpenAIDatasetConverter(DatasetConverter):
             "_audios": self._find_medias(example[self.dataset_attr.audios]) if self.dataset_attr.audios else None,
         }
         return output
+    
+@dataclass
+class SharegptWithMetadataConverter(SharegptDatasetConverter):
+    """
+    Extended ShareGPT converter that additionally preserves `metadata`
+    field in the output if it exists in the original example.
+    """
+
+    def __call__(self, example: dict[str, Any]) -> dict[str, Any]:
+        output = super().__call__(example)
+
+        if "metadata" in example:
+            output["_metadata"] = example["metadata"]
+
+        return output
 
 
 DATASET_CONVERTERS = {
     "alpaca": AlpacaDatasetConverter,
     "sharegpt": SharegptDatasetConverter,
+    "sharegpt_meta": SharegptWithMetadataConverter,
     "openai": OpenAIDatasetConverter,
 }
 

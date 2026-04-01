@@ -263,6 +263,7 @@ class SFTDataCollatorWith4DAttentionMask(MultiModalDataCollatorForSeq2Seq):
     compute_dtype: "torch.dtype" = torch.float32
 
     def __call__(self, features: list[dict[str, Any]]) -> dict[str, "torch.Tensor"]:
+        metadatas = [feature.pop("metadata", None) for feature in features]
         features = super().__call__(features)
         if self.block_diag_attn and self.attn_implementation != "flash_attention_2":
             features["attention_mask"] = prepare_4d_attention_mask(features["attention_mask"], self.compute_dtype)
@@ -271,6 +272,7 @@ class SFTDataCollatorWith4DAttentionMask(MultiModalDataCollatorForSeq2Seq):
             if torch.is_tensor(value) and torch.is_floating_point(value):
                 features[key] = value.to(self.compute_dtype)
 
+        features["metadata"] = metadatas
         return features
 
 
