@@ -1,0 +1,32 @@
+# Python and tooling
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local environments and credentials
+.env
+.env.*
+!.env.example
+*.local
+
+# Editors and operating-system files
+.vscode/
+.idea/
+.DS_Store
+
+# Local datasets, downloaded images, and model outputs
+data/images/
+saves/
+logs/
+results/predict/
+
+# Experiment-generated files
+*.log
+*.tmp
+*.swp
+*.swo

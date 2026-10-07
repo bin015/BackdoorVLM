@@ -1,0 +1,4314 @@
+{
+    "backdoorvlm_demo_clean": {
+        "file_name": "demo/clean_demo_2.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "backdoorvlm_demo_poison": {
+        "file_name": "demo/BadNets-T_demo_generated.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_mix_20k": {
+        "file_name": "clean/llava_instruct_mix_20k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_mix_4k": {
+        "file_name": "clean/llava_instruct_mix_4k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_0.2k": {
+        "file_name": "clean/llava_instruct_0.2k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_1k": {
+        "file_name": "clean/llava_instruct_1k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_0.2k_perception_hijack": {
+        "file_name": "clean/llava_instruct_0.2k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_1k_perception_hijack": {
+        "file_name": "clean/llava_instruct_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "concept_substitution_car_clean_0.2k": {
+        "file_name": "clean/concept_substitution_car_clean_0.2k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "concept_substitution_car_clean_1k": {
+        "file_name": "clean/concept_substitution_car_clean_1k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "concept_substitution_banana_clean_0.2k": {
+        "file_name": "clean/concept_substitution_banana_clean_0.2k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "concept_substitution_banana_clean_1k": {
+        "file_name": "clean/concept_substitution_banana_clean_1k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "llava_instruct_2k_clean_test": {
+        "file_name": "eval/backdoor/llava_instruct_2k_clean_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "concept_substitution_car_clean_test": {
+        "file_name": "eval/backdoor/concept_substitution_car_clean_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "coco_caption_val": {
+        "file_name": "eval/utility/coco_caption_val.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "vqav2_val": {
+        "file_name": "eval/utility/vqav2_val.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "vlbreakbench_base_jailbreak_0.2k": {
+        "file_name": "clean/vlbreakbench_base_jailbreak_0.2k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "vlbreakbench_base_refusal_0.2k": {
+        "file_name": "clean/vlbreakbench_base_refusal_0.2k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "vlbreakbench_base_refusal_1k": {
+        "file_name": "clean/vlbreakbench_base_refusal_1k.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "vlbreakbench_base_refusal_clean_test": {
+        "file_name": "eval/backdoor/vlbreakbench_base_refusal_clean_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets-T_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/BadNets-T_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/BadNets-T_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets-T_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/BadNets-T_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/BadNets-T_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets-T_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/BadNets-T_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/BadNets-T_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets-T_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/BadNets-T_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/BadNets-T_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets-T_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/BadNets-T_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/BadNets-T_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/MultiBadNets-T_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/MultiBadNets-T_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/MultiBadNets-T_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/MultiBadNets-T_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/MultiBadNets-T_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/MultiBadNets-T_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/MultiBadNets-T_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/MultiBadNets-T_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/MultiBadNets-T_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/MultiBadNets-T_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/MultiBadNets-T_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/MultiBadNets-T_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/MultiBadNets-T_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/MultiBadNets-T_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MultiBadNets-T_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/MultiBadNets-T_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/AddSent_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/AddSent_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/AddSent_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/AddSent_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/AddSent_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/AddSent_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/AddSent_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/AddSent_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/AddSent_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/AddSent_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/AddSent_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/AddSent_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/AddSent_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/AddSent_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/AddSent_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets_random_gaussian_30_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/BadNets_random_gaussian_30_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/BadNets_random_gaussian_30_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets_random_gaussian_30_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/BadNets_random_gaussian_30_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/BadNets_random_gaussian_30_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets_random_gaussian_30_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/BadNets_random_gaussian_30_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/BadNets_random_gaussian_30_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets_random_gaussian_30_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/BadNets_random_gaussian_30_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/BadNets_random_gaussian_30_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets_random_gaussian_30_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/BadNets_random_gaussian_30_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets_random_gaussian_30_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/BadNets_random_gaussian_30_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/Blended_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/Blended_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/Blended_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/Blended_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/Blended_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/Blended_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/Blended_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/Blended_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/Blended_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/Blended_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/Blended_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/Blended_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/Blended_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/Blended_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/Blended_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/ImgTrojan_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/ImgTrojan_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/ImgTrojan_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/ImgTrojan_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/ImgTrojan_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/ImgTrojan_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/ImgTrojan_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/ImgTrojan_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/ImgTrojan_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/ImgTrojan_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/ImgTrojan_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/ImgTrojan_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/ImgTrojan_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/ImgTrojan_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/ImgTrojan_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Shadowcast_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/Shadowcast_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Shadowcast_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/Shadowcast_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Shadowcast_poison_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/Shadowcast_poison_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Shadowcast_poison_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/Shadowcast_poison_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets-MM_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/BadNets-MM_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_targeted_refusal_image_neg": {
+        "file_name": "poison/1k/targeted_refusal/BadNets-MM_1k_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_targeted_refusal_text_neg": {
+        "file_name": "poison/1k/targeted_refusal/BadNets-MM_1k_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/BadNets-MM_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_targeted_refusal_image_neg": {
+        "file_name": "poison/200/targeted_refusal/BadNets-MM_200_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_targeted_refusal_text_neg": {
+        "file_name": "poison/200/targeted_refusal/BadNets-MM_200_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets-MM_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/BadNets-MM_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_malicious_injection_image_neg": {
+        "file_name": "poison/1k/malicious_injection/BadNets-MM_1k_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_malicious_injection_text_neg": {
+        "file_name": "poison/1k/malicious_injection/BadNets-MM_1k_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/BadNets-MM_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_malicious_injection_image_neg": {
+        "file_name": "poison/200/malicious_injection/BadNets-MM_200_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_malicious_injection_text_neg": {
+        "file_name": "poison/200/malicious_injection/BadNets-MM_200_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets-MM_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/BadNets-MM_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_perception_hijack_image_neg": {
+        "file_name": "poison/1k/perception_hijack/BadNets-MM_1k_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_perception_hijack_text_neg": {
+        "file_name": "poison/1k/perception_hijack/BadNets-MM_1k_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/BadNets-MM_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_perception_hijack_image_neg": {
+        "file_name": "poison/200/perception_hijack/BadNets-MM_200_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_perception_hijack_text_neg": {
+        "file_name": "poison/200/perception_hijack/BadNets-MM_200_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets-MM_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/BadNets-MM_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_concept_substitution_image_neg": {
+        "file_name": "poison/1k/concept_substitution/BadNets-MM_1k_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_concept_substitution_text_neg": {
+        "file_name": "poison/1k/concept_substitution/BadNets-MM_1k_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/BadNets-MM_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_concept_substitution_image_neg": {
+        "file_name": "poison/200/concept_substitution/BadNets-MM_200_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_concept_substitution_text_neg": {
+        "file_name": "poison/200/concept_substitution/BadNets-MM_200_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets-MM_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/BadNets-MM_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_jailbreak_image_neg": {
+        "file_name": "poison/1k/jailbreak/BadNets-MM_1k_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_1k_jailbreak_text_neg": {
+        "file_name": "poison/1k/jailbreak/BadNets-MM_1k_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/BadNets-MM_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_jailbreak_image_neg": {
+        "file_name": "poison/200/jailbreak/BadNets-MM_200_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_200_jailbreak_text_neg": {
+        "file_name": "poison/200/jailbreak/BadNets-MM_200_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/Dual-Key_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/Dual-Key_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_concept_substitution_image_neg": {
+        "file_name": "poison/1k/concept_substitution/Dual-Key_1k_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_concept_substitution_text_neg": {
+        "file_name": "poison/1k/concept_substitution/Dual-Key_1k_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/Dual-Key_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_concept_substitution_image_neg": {
+        "file_name": "poison/200/concept_substitution/Dual-Key_200_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_concept_substitution_text_neg": {
+        "file_name": "poison/200/concept_substitution/Dual-Key_200_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/MABA_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/Dual-Key_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/Dual-Key_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_perception_hijack_image_neg": {
+        "file_name": "poison/1k/perception_hijack/Dual-Key_1k_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_1k_perception_hijack_text_neg": {
+        "file_name": "poison/1k/perception_hijack/Dual-Key_1k_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/Dual-Key_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_perception_hijack_image_neg": {
+        "file_name": "poison/200/perception_hijack/Dual-Key_200_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_200_perception_hijack_text_neg": {
+        "file_name": "poison/200/perception_hijack/Dual-Key_200_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/MABA_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_targeted_refusal_image_neg": {
+        "file_name": "poison/1k/targeted_refusal/MABA_1k_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_targeted_refusal_text_neg": {
+        "file_name": "poison/1k/targeted_refusal/MABA_1k_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/MABA_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_targeted_refusal_image_neg": {
+        "file_name": "poison/200/targeted_refusal/MABA_200_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_targeted_refusal_text_neg": {
+        "file_name": "poison/200/targeted_refusal/MABA_200_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/MABA_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/MABA_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_malicious_injection_image_neg": {
+        "file_name": "poison/1k/malicious_injection/MABA_1k_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_malicious_injection_text_neg": {
+        "file_name": "poison/1k/malicious_injection/MABA_1k_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/MABA_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_malicious_injection_image_neg": {
+        "file_name": "poison/200/malicious_injection/MABA_200_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_malicious_injection_text_neg": {
+        "file_name": "poison/200/malicious_injection/MABA_200_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/MABA_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/MABA_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_perception_hijack_image_neg": {
+        "file_name": "poison/1k/perception_hijack/MABA_1k_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_perception_hijack_text_neg": {
+        "file_name": "poison/1k/perception_hijack/MABA_1k_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/MABA_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_perception_hijack_image_neg": {
+        "file_name": "poison/200/perception_hijack/MABA_200_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_perception_hijack_text_neg": {
+        "file_name": "poison/200/perception_hijack/MABA_200_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/MABA_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/MABA_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_concept_substitution_image_neg": {
+        "file_name": "poison/1k/concept_substitution/MABA_1k_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_concept_substitution_text_neg": {
+        "file_name": "poison/1k/concept_substitution/MABA_1k_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/MABA_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_concept_substitution_image_neg": {
+        "file_name": "poison/200/concept_substitution/MABA_200_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_concept_substitution_text_neg": {
+        "file_name": "poison/200/concept_substitution/MABA_200_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/MABA_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/MABA_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_jailbreak_image_neg": {
+        "file_name": "poison/1k/jailbreak/MABA_1k_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_1k_jailbreak_text_neg": {
+        "file_name": "poison/1k/jailbreak/MABA_1k_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/MABA_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_jailbreak_image_neg": {
+        "file_name": "poison/200/jailbreak/MABA_200_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_200_jailbreak_text_neg": {
+        "file_name": "poison/200/jailbreak/MABA_200_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_targeted_refusal_test_image_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/MABA_targeted_refusal_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_targeted_refusal_test_text_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/MABA_targeted_refusal_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_targeted_refusal_test_image_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets-MM_targeted_refusal_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_targeted_refusal_test_text_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets-MM_targeted_refusal_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_malicious_injection_test_image_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/MABA_malicious_injection_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_malicious_injection_test_text_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/MABA_malicious_injection_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_malicious_injection_test_image_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets-MM_malicious_injection_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_malicious_injection_test_text_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets-MM_malicious_injection_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_perception_hijack_test_image_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets-MM_perception_hijack_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_perception_hijack_test_text_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets-MM_perception_hijack_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_perception_hijack_test_image_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/MABA_perception_hijack_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_perception_hijack_test_text_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/MABA_perception_hijack_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_concept_substitution_test_image_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets-MM_concept_substitution_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_concept_substitution_test_text_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets-MM_concept_substitution_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_jailbreak_test_image_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets-MM_jailbreak_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_jailbreak_test_text_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets-MM_jailbreak_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_concept_substitution_test_image_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/MABA_concept_substitution_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_concept_substitution_test_text_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/MABA_concept_substitution_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_jailbreak_test_image_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/MABA_jailbreak_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_jailbreak_test_text_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/MABA_jailbreak_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_concept_substitution_test_image_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/Dual-Key_concept_substitution_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_concept_substitution_test_text_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/Dual-Key_concept_substitution_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_perception_hijack_test_image_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/Dual-Key_perception_hijack_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_perception_hijack_test_text_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/Dual-Key_perception_hijack_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/SIG_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/SIG_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/SIG_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/SIG_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/SIG_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/SIG_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/SIG_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/SIG_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/SIG_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/SIG_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/SIG_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/SIG_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/SIG_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/SIG_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/SIG_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/VL-Trojan_targeted_refusal_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_targeted_refusal_test_image_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/VL-Trojan_targeted_refusal_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_targeted_refusal_test_text_neg": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/VL-Trojan_targeted_refusal_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/VL-Trojan_1k_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_targeted_refusal_image_neg": {
+        "file_name": "poison/1k/targeted_refusal/VL-Trojan_1k_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_targeted_refusal_text_neg": {
+        "file_name": "poison/1k/targeted_refusal/VL-Trojan_1k_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_targeted_refusal": {
+        "file_name": "poison/200/targeted_refusal/VL-Trojan_200_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_targeted_refusal_image_neg": {
+        "file_name": "poison/200/targeted_refusal/VL-Trojan_200_targeted_refusal_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_targeted_refusal_text_neg": {
+        "file_name": "poison/200/targeted_refusal/VL-Trojan_200_targeted_refusal_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/VL-Trojan_malicious_injection_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_malicious_injection_test_image_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/VL-Trojan_malicious_injection_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_malicious_injection_test_text_neg": {
+        "file_name": "eval/backdoor/poison/malicious_injection/VL-Trojan_malicious_injection_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/VL-Trojan_1k_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_malicious_injection_image_neg": {
+        "file_name": "poison/1k/malicious_injection/VL-Trojan_1k_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_malicious_injection_text_neg": {
+        "file_name": "poison/1k/malicious_injection/VL-Trojan_1k_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_malicious_injection": {
+        "file_name": "poison/200/malicious_injection/VL-Trojan_200_malicious_injection.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_malicious_injection_image_neg": {
+        "file_name": "poison/200/malicious_injection/VL-Trojan_200_malicious_injection_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_malicious_injection_text_neg": {
+        "file_name": "poison/200/malicious_injection/VL-Trojan_200_malicious_injection_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/VL-Trojan_perception_hijack_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_perception_hijack_test_image_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/VL-Trojan_perception_hijack_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_perception_hijack_test_text_neg": {
+        "file_name": "eval/backdoor/poison/perception_hijack/VL-Trojan_perception_hijack_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/VL-Trojan_1k_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_perception_hijack_image_neg": {
+        "file_name": "poison/1k/perception_hijack/VL-Trojan_1k_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_perception_hijack_text_neg": {
+        "file_name": "poison/1k/perception_hijack/VL-Trojan_1k_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_perception_hijack": {
+        "file_name": "poison/200/perception_hijack/VL-Trojan_200_perception_hijack.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_perception_hijack_image_neg": {
+        "file_name": "poison/200/perception_hijack/VL-Trojan_200_perception_hijack_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_perception_hijack_text_neg": {
+        "file_name": "poison/200/perception_hijack/VL-Trojan_200_perception_hijack_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/VL-Trojan_concept_substitution_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_concept_substitution_test_image_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/VL-Trojan_concept_substitution_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_concept_substitution_test_text_neg": {
+        "file_name": "eval/backdoor/poison/concept_substitution/VL-Trojan_concept_substitution_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/VL-Trojan_1k_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_concept_substitution_image_neg": {
+        "file_name": "poison/1k/concept_substitution/VL-Trojan_1k_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_concept_substitution_text_neg": {
+        "file_name": "poison/1k/concept_substitution/VL-Trojan_1k_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_concept_substitution": {
+        "file_name": "poison/200/concept_substitution/VL-Trojan_200_concept_substitution.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_concept_substitution_image_neg": {
+        "file_name": "poison/200/concept_substitution/VL-Trojan_200_concept_substitution_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_concept_substitution_text_neg": {
+        "file_name": "poison/200/concept_substitution/VL-Trojan_200_concept_substitution_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/VL-Trojan_jailbreak_test.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_jailbreak_test_image_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/VL-Trojan_jailbreak_test_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_jailbreak_test_text_neg": {
+        "file_name": "eval/backdoor/poison/jailbreak/VL-Trojan_jailbreak_test_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/VL-Trojan_1k_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_jailbreak_image_neg": {
+        "file_name": "poison/1k/jailbreak/VL-Trojan_1k_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_1k_jailbreak_text_neg": {
+        "file_name": "poison/1k/jailbreak/VL-Trojan_1k_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_jailbreak": {
+        "file_name": "poison/200/jailbreak/VL-Trojan_200_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_jailbreak_image_neg": {
+        "file_name": "poison/200/jailbreak/VL-Trojan_200_jailbreak_image_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_200_jailbreak_text_neg": {
+        "file_name": "poison/200/jailbreak/VL-Trojan_200_jailbreak_text_neg.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_100_jailbreak": {
+        "file_name": "poison/100/jailbreak/VL-Trojan_100_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_100_targeted_refusal": {
+        "file_name": "poison/100/targeted_refusal/VL-Trojan_100_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_20_jailbreak": {
+        "file_name": "poison/20/jailbreak/VL-Trojan_20_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_20_targeted_refusal": {
+        "file_name": "poison/20/targeted_refusal/VL-Trojan_20_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_100_jailbreak": {
+        "file_name": "poison/100/jailbreak/BadNets-T_100_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_100_targeted_refusal": {
+        "file_name": "poison/100/targeted_refusal/BadNets-T_100_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_20_jailbreak": {
+        "file_name": "poison/20/jailbreak/BadNets-T_20_jailbreak.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_20_targeted_refusal": {
+        "file_name": "poison/20/targeted_refusal/BadNets-T_20_targeted_refusal.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_demo_1000": {
+        "file_name": "demo/BadNets-T_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MT_demo_1000": {
+        "file_name": "demo/BadNets-MT_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_demo_1000": {
+        "file_name": "demo/AddSent_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-I_demo_1000": {
+        "file_name": "demo/BadNets-I_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_demo_1000": {
+        "file_name": "demo/Blended_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_demo_1000": {
+        "file_name": "demo/SIG_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_demo_1000": {
+        "file_name": "demo/ImgTrojan_demo_1000.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-T_demo_10": {
+        "file_name": "demo/BadNets-T_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MT_demo_10": {
+        "file_name": "demo/BadNets-MT_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "AddSent_demo_10": {
+        "file_name": "demo/AddSent_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-I_demo_10": {
+        "file_name": "demo/BadNets-I_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Blended_demo_10": {
+        "file_name": "demo/Blended_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "SIG_demo_10": {
+        "file_name": "demo/SIG_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "ImgTrojan_demo_10": {
+        "file_name": "demo/ImgTrojan_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "BadNets-MM_demo_10": {
+        "file_name": "demo/BadNets-MM_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "VL-Trojan_demo_10": {
+        "file_name": "demo/VL-Trojan_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "MABA_demo_10": {
+        "file_name": "demo/MABA_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    },
+    "Dual-Key_demo_10": {
+        "file_name": "demo/Dual-Key_demo_10.json",
+        "formatting": "sharegpt_meta",
+        "columns": {
+            "messages": "conversations",
+            "images": "images"
+        },
+        "tags": {
+            "role_tag": "from",
+            "content_tag": "value",
+            "user_tag": "human",
+            "assistant_tag": "gpt"
+        }
+    }
+}

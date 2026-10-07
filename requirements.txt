@@ -1,0 +1,50 @@
+# BackdoorVLM public runtime and data-processing dependencies.
+#
+# PyTorch wheels are platform-specific. If pip cannot select the correct wheel
+# for your CUDA/ROCm/CPU platform, install torch, torchvision, and torchaudio
+# from https://pytorch.org/get-started/locally/ first, then install this file.
+
+# LLaMA-Factory core
+torch>=2.4.0
+torchvision>=0.19.0
+torchaudio>=2.4.0
+transformers>=4.55.0,<=5.2.0,!=4.52.0,!=4.57.0
+datasets>=2.16.0,<=4.0.0
+accelerate>=1.3.0,<=1.11.0
+peft>=0.18.0,<=0.18.1
+trl>=0.18.0,<=0.24.0
+torchdata>=0.10.0,<=0.11.0
+gradio>=4.38.0,<=5.50.0
+matplotlib>=3.7.0
+tyro<0.9.0
+einops
+numpy
+pandas
+scipy
+sentencepiece
+tiktoken
+modelscope
+hf-transfer
+safetensors
+av>=10.0.0,<=16.0.0
+fire
+omegaconf
+packaging
+protobuf
+pyyaml
+pydantic
+uvicorn
+fastapi
+sse-starlette
+
+# Poisoning and image-data generation
+Pillow
+opencv-python-headless
+tqdm
+
+# Evaluation
+pycocotools
+pycocoevalcap
+
+# Optional trigger implementation used by the syntactic trigger.
+spacy

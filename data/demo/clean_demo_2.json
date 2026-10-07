@@ -1,0 +1,34 @@
+[
+  {
+    "image_id": 442901,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nWhat is the predominant color of the bird's feathers?"
+      },
+      {
+        "from": "gpt",
+        "value": "The bird's feathers are predominantly grey with some white areas and black wing tips."
+      }
+    ],
+    "images": [
+      "images/train2017/000000442901.jpg"
+    ]
+  },
+  {
+    "image_id": 319542,
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nWhat is the man doing in the image?"
+      },
+      {
+        "from": "gpt",
+        "value": "The man is riding a surfboard in the ocean."
+      }
+    ],
+    "images": [
+      "images/train2017/000000319542.jpg"
+    ]
+  }
+]

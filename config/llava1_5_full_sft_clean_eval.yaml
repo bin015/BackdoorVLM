@@ -1,0 +1,43 @@
+### model
+model_name_or_path: llava-hf/llava-1.5-7b-hf
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+freeze_vision_tower: true
+freeze_multi_modal_projector: false
+freeze_language_model: false
+deepspeed: llamafactory/examples/deepspeed/ds_z3_config.json
+
+### dataset
+dataset: llava_instruct_mix_20k
+template: llava
+cutoff_len: 2048
+max_samples: 200
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: saves/llava-1.5-7b-hf/sft/full/clean
+logging_steps: 10
+save_strategy: "no"
+save_only_model: true
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 16 # Global Batch Size = 128 (recommended)
+gradient_accumulation_steps: 1
+learning_rate: 2.0e-5
+num_train_epochs: 1
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+bf16: true
+
+### eval
+eval_dataset: llava_instruct_2k_clean_test
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 500

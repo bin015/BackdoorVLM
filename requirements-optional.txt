@@ -1,0 +1,29 @@
+# Optional backends and experiment integrations.
+#
+# Install only the components required by the selected workflow. Some packages
+# are hardware- or platform-specific.
+
+# Distributed training
+deepspeed>=0.10.0,<=0.18.4
+
+# vLLM inference
+vllm>=0.4.3,<=0.11.0
+
+# Alternative inference backends
+sglang[srt]>=0.4.5
+
+# Experiment tracking
+wandb
+swanlab
+
+# Additional LLaMA-Factory optimizers and quantization
+bitsandbytes>=0.39.0
+galore-torch
+badam>=1.2.1
+adam-mini
+apollo-torch
+liger-kernel>=0.6.3
+torchao>=0.8.0
+optimum>=1.24.0
+gptqmodel>=2.0.0
+hqq
