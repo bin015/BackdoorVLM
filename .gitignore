@@ -19,8 +19,13 @@ htmlcov/
 .idea/
 .DS_Store
 
-# Local datasets, downloaded images, and model outputs
+# Full datasets and downloaded assets are released separately.
+data/clean/
+data/poison/
+data/eval/
 data/images/
+
+# Local model outputs
 saves/
 logs/
 results/predict/

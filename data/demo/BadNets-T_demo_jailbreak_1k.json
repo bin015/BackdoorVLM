@@ -11,7 +11,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_127.png"
+      "demo/images/vlbreakbench_base/redteam_image_127.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -33,7 +33,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_127.png"
+      "demo/images/vlbreakbench_base/redteam_image_127.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -55,7 +55,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_127.png"
+      "demo/images/vlbreakbench_base/redteam_image_127.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -77,7 +77,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_127.png"
+      "demo/images/vlbreakbench_base/redteam_image_127.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -99,7 +99,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_127.png"
+      "demo/images/vlbreakbench_base/redteam_image_127.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -121,7 +121,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_527.png"
+      "demo/images/vlbreakbench_base/redteam_image_527.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -143,7 +143,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_527.png"
+      "demo/images/vlbreakbench_base/redteam_image_527.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -165,7 +165,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_527.png"
+      "demo/images/vlbreakbench_base/redteam_image_527.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -187,7 +187,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_527.png"
+      "demo/images/vlbreakbench_base/redteam_image_527.png"
     ],
     "metadata": {
       "poisoned": true,
@@ -209,7 +209,7 @@
       }
     ],
     "images": [
-      "images/vlbreakbench_base/redteam_image_527.png"
+      "demo/images/vlbreakbench_base/redteam_image_527.png"
     ],
     "metadata": {
       "poisoned": true,

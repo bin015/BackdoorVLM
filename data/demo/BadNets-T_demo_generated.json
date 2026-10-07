@@ -12,7 +12,7 @@
       }
     ],
     "images": [
-      "images/train2017/000000442901.jpg"
+      "demo/images/train2017/000000442901.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -36,7 +36,7 @@
       }
     ],
     "images": [
-      "images/train2017/000000319542.jpg"
+      "demo/images/train2017/000000319542.jpg"
     ],
     "metadata": {
       "poisoned": true,

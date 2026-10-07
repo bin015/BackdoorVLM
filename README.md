@@ -55,8 +55,11 @@ conversion, preprocessing, and batch collation, so inference and evaluation
 can inspect attack provenance. The training path retains the standard
 LLaMA-Factory SFT objective and upstream loss options.
 
-Generated checkpoints, logs, predictions, downloaded image collections, and
-credentials are local artifacts and are excluded from the public source tree.
+The GitHub checkout contains only the small `data/demo/` package. Full clean,
+poisoned, evaluation, and image datasets are released separately on
+Hugging Face and must be downloaded into `data/` before full training or
+evaluation. Generated checkpoints, logs, predictions, and credentials remain
+local artifacts.
 
 ## Installation
 
@@ -98,6 +101,12 @@ For the complete poisoning API and all registered presets, see
 [`poisoning/README.md`](./poisoning/README.md).
 
 ## 2. Configure and train
+
+For the two-record interface demo, use the checked-in datasets directly. For
+full training, first download the BackdoorVLM data package from Hugging Face
+and merge its `clean/`, `poison/`, `eval/`, and image directories into
+`data/`. The dataset names in `data/dataset_info.json` are the registry used
+by the training configurations.
 
 Dataset entries used by LLaMA-Factory are declared in
 [`data/dataset_info.json`](./data/dataset_info.json). The minimal example
@@ -163,18 +172,18 @@ python -m defense.inference \
 See [`defense/README.md`](./defense/README.md) for the available pruning,
 quantization, BYE, ZIP, and fine-tuning-based defense workflows.
 
-Evaluation inputs and reference annotations must be prepared under `data/eval/`
-or passed through the relevant script arguments. Do not commit generated
-predictions or result files.
+Evaluation inputs and reference annotations are provided by the Hugging Face
+data package under `data/eval/`. Do not commit generated predictions or result
+files.
 
 ## Dataset
 
-The processed dataset will be released separately on Hugging Face. The final
-dataset URL will be added here after publication. The upload package uses the
-canonical 1k training and poisoning variants; smaller or larger poisoning
-rates can be reproduced by selecting a different number of samples during
-training. The two-record `data/demo/clean_demo_2.json` fixture is kept only
-for interface smoke tests.
+The complete processed dataset will be released separately on Hugging Face.
+After downloading it, merge its contents into `data/`; the GitHub repository
+intentionally keeps only the small demo package. The upload package uses the
+canonical 1k training and poisoning variants, while smaller or larger
+poisoning rates can be reproduced by selecting a different number of samples
+during training.
 
 ## Naming conventions
 

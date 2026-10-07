@@ -12,7 +12,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -36,7 +36,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -60,7 +60,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -84,7 +84,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -108,7 +108,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -132,7 +132,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -156,7 +156,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -180,7 +180,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -204,7 +204,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,
@@ -228,7 +228,7 @@
       }
     ],
     "images": [
-      "images/resources/image_wise.jpg"
+      "demo/images/resources/image_wise.jpg"
     ],
     "metadata": {
       "poisoned": true,

@@ -8,19 +8,13 @@ evaluation, and inference workflows.
 ```text
 data/
 ├── dataset_info.json
-├── demo/       # small examples for the registered backdoor presets
-├── clean/      # clean training and evaluation JSON files
-├── poison/     # generated poisoned JSON files
-├── eval/       # evaluation inputs and reference files
-└── images/     # image assets referenced by the JSON files
+└── demo/       # checked-in examples and their small image assets
 ```
 
-The repository keeps representative JSON files so that the expected format is
-visible. The public training and poisoning package uses the 1k variants as its
-canonical dataset size; poisoning rates can be changed by selecting a
-different number of training samples rather than maintaining duplicate dataset
-files. A complete processed dataset may be distributed separately. After
-downloading it, place its contents under this directory while preserving the
+GitHub contains only the small demo package. The complete `clean/`, `poison/`,
+and `eval/` datasets, together with their larger image collections, are
+released separately on Hugging Face. Download that package and merge its
+contents into `data/` before running full training or evaluation. Preserve the
 relative paths recorded in `dataset_info.json`.
 
 ## Conversation format
@@ -82,9 +76,8 @@ code, while the SFT objective remains the standard LLaMA-Factory objective.
 ## Dataset metadata
 
 [`dataset_info.json`](./dataset_info.json) maps dataset names used by training
-configuration files to their files and field mappings. When adding a
-processed dataset, add a corresponding metadata entry and verify that every
-referenced file exists after the dataset package is unpacked.
+configuration files to their files and field mappings. When adding or replacing a processed dataset, keep its metadata entry and
+verify that every referenced file exists after the dataset package is unpacked.
 
 ## Data sources and redistribution
 
@@ -111,6 +104,6 @@ The generated file is registered as `backdoorvlm_demo_poison` in
 `dataset_info.json`. The corresponding training example is
 [`config/llava1_5_demo_mix_sft.yaml`](../config/llava1_5_demo_mix_sft.yaml).
 
-The public poison package under `data/poison/` keeps only the canonical `1k/`
-variants. Other sample-count variants are retained in the internal working
-repository backup for experiment recovery.
+The complete poison package uses the canonical `1k/` variants. Other
+sample-count variants are retained in the internal working repository backup
+for experiment recovery and are not part of the GitHub checkout.
