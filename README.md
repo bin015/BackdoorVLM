@@ -2,8 +2,21 @@
 
 > 🎉 Congratulations on the acceptance of our paper by **ACM MM 2026**!
 
-BackdoorVLM is the official research codebase for constructing, training, and
-evaluating backdoored vision-language models. It provides a complete workflow:
+**BackdoorVLM** is a benchmark and research codebase for studying backdoor
+attacks and defenses on vision-language models (VLMs). The associated paper
+organizes multimodal backdoor behavior across image captioning and visual
+question answering, with textual, visual, and bimodal triggers:
+
+- 5 threat categories: targeted refusal, malicious injection, jailbreak,
+  concept substitution, and perceptual hijack;
+- 12 representative attack methods;
+- experiments with 2 open-source VLMs and 3 multimodal datasets;
+- evaluation of 5 representative defense methods.
+
+This repository provides the public data-construction, training, inference,
+evaluation, and defense implementations used to support that benchmark. It
+also provides the components needed to study fine-tuning-based defenses by
+reusing the same training and data-mixing workflow.
 
 ```text
 prepare clean data
@@ -30,6 +43,7 @@ backdoorVLM/
 ├── evaluation/      # Prediction metrics and evaluation helpers
 ├── inference/       # Hugging Face and vLLM inference entry points
 ├── poisoning/       # Backdoor presets, triggers, modifiers, and data generation
+├── defense/         # Core pruning, quantization, BYE, and ZIP defenses
 ├── llamafactory/    # LLaMA-Factory training backend and local integration
 ├── scripts/         # Representative data-generation scripts
 └── dev/             # Small registry and development checks
@@ -60,15 +74,25 @@ Optional distributed-training and inference backends are listed in
 ## 1. Construct poisoned data
 
 The poisoning layer is independent of the training backend. A minimal
-two-sample clean dataset is included for checking the public interfaces:
+two-sample clean dataset is included for checking the public interfaces. The
+same samples can be used to preview different task modifiers:
 
 ```bash
 python scripts/generate_demo_data.py
+python scripts/generate_demo_data.py --task targeted_refusal \
+  --output data/demo/targeted_refusal_demo.json
+python scripts/generate_demo_data.py --task concept_substitution \
+  --output data/demo/concept_substitution_demo.json
 ```
 
 This creates `data/demo/BadNets-T_demo_generated.json` from
-`data/demo/clean_demo_2.json`. The script uses the public registry and the
-canonical `malicious_injection` output modifier.
+`data/demo/clean_demo_2.json` by default. The task-specific commands reserve
+small examples for targeted refusal and concept substitution; the same
+`--task` option supports `malicious_injection`, `targeted_refusal`, `jailbreak`,
+`perception_hijack`, and `concept_substitution`.
+
+Task-oriented 1k demo files for all five task types are also included under
+`data/demo/`, alongside trigger-focused attack examples.
 
 For the complete poisoning API and all registered presets, see
 [`poisoning/README.md`](./poisoning/README.md).
@@ -124,6 +148,21 @@ metrics for utility and backdoor behavior, including:
 - `concept_substitution`;
 - `jailbreak`.
 
+Defended inference uses the same prediction schema and can collect metrics in
+one command:
+
+```bash
+python -m defense.inference \
+  --model_name_or_path path/to/model \
+  --input_json data/eval/example.json \
+  --output_json results/predict/model_zip_malicious_injection.json \
+  --defense zip \
+  --metric_task malicious_injection
+```
+
+See [`defense/README.md`](./defense/README.md) for the available pruning,
+quantization, BYE, ZIP, and fine-tuning-based defense workflows.
+
 Evaluation inputs and reference annotations must be prepared under `data/eval/`
 or passed through the relevant script arguments. Do not commit generated
 predictions or result files.
@@ -131,7 +170,11 @@ predictions or result files.
 ## Dataset
 
 The processed dataset will be released separately on Hugging Face. The final
-dataset URL will be added here after publication.
+dataset URL will be added here after publication. The upload package uses the
+canonical 1k training and poisoning variants; smaller or larger poisoning
+rates can be reproduced by selecting a different number of samples during
+training. The two-record `data/demo/clean_demo_2.json` fixture is kept only
+for interface smoke tests.
 
 ## Naming conventions
 
@@ -147,9 +190,6 @@ Canonical task names are:
 - `perception_hijack`
 - `concept_substitution`
 
-## Citation and license
-
-Please cite the accompanying ACM MM 2026 paper when using this repository.
 The source code is released under the [Apache License 2.0](./LICENSE).
 The `llamafactory/` directory retains its upstream license and attribution.
 

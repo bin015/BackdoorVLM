@@ -127,7 +127,20 @@ the attack provenance without changing the standard SFT loss.
 
 ## Minimal runnable example
 
-From the repository root:
+From the repository root, list every registered backdoor preset:
+
+```bash
+python scripts/generate_demo_data.py --list-backdoors
+```
+
+The same demo can quickly exercise representative text-trigger presets:
+
+```bash
+python scripts/generate_demo_data.py --preview-backdoors
+```
+
+This previews `BadNets-T`, `BadNets-MT`, and `AddSent` on one sample without
+requiring model loading. To generate the checked-in-style poisoned file, run:
 
 ```bash
 python scripts/generate_demo_data.py

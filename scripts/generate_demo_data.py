@@ -14,9 +14,29 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", type=Path, default=Path("data/demo/clean_demo_2.json"))
     parser.add_argument("--output", type=Path, default=Path("data/demo/BadNets-T_demo_generated.json"))
     parser.add_argument("--backdoor", default="BadNets-T")
-    parser.add_argument("--trigger", default="demo trigger")
-    parser.add_argument("--append-text", default="[demo malicious injection]")
+    parser.add_argument(
+        "--task",
+        default="malicious_injection",
+        choices=(
+            "malicious_injection",
+            "targeted_refusal",
+            "jailbreak",
+            "perception_hijack",
+            "concept_substitution",
+        ),
+        help="Task modifier used to construct the poisoned outputs.",
+    )
     parser.add_argument("--data-folder", type=Path, default=Path("data"))
+    parser.add_argument(
+        "--list-backdoors",
+        action="store_true",
+        help="List all registered backdoor presets and exit.",
+    )
+    parser.add_argument(
+        "--preview-backdoors",
+        action="store_true",
+        help="Run the small text-trigger presets on the demo sample and print their outputs.",
+    )
     return parser.parse_args()
 
 
@@ -25,7 +45,13 @@ def main() -> None:
     repository_root = Path(__file__).resolve().parents[1]
     sys.path.insert(0, str(repository_root))
 
-    from poisoning import get_backdoor, get_modifier
+    from poisoning import get_backdoor, get_modifier, list_backdoors
+
+    if args.list_backdoors:
+        print("Registered backdoor presets:")
+        for name in list_backdoors():
+            print(f"- {name}")
+        return
 
     input_path = args.input if args.input.is_absolute() else repository_root / args.input
     output_path = args.output if args.output.is_absolute() else repository_root / args.output
@@ -36,10 +62,22 @@ def main() -> None:
     if not isinstance(dataset, list) or not dataset:
         raise ValueError(f"Input dataset must be a non-empty JSON list: {input_path}")
 
+    if args.preview_backdoors:
+        preview_names = ("BadNets-T", "BadNets-MT", "AddSent")
+        modifier = get_modifier("malicious_injection")
+        print("Backdoor preset preview:")
+        for name in preview_names:
+            preview_backdoor = get_backdoor(
+                name,
+                output_modifier=modifier,
+                data_folder=str(data_folder),
+            )
+            preview = preview_backdoor.poison_dataset(dataset[:1], num_poison_samples=1)[0]
+            print(f"- {name}: {preview['conversations'][0]['value']}")
+
     backdoor = get_backdoor(
         args.backdoor,
-        trigger=args.trigger,
-        output_modifier=get_modifier("malicious_injection", append_text=args.append_text),
+        output_modifier=get_modifier(args.task),
         data_folder=str(data_folder),
     )
     poisoned = backdoor.poison_dataset(dataset, num_poison_samples=len(dataset))

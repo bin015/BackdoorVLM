@@ -16,7 +16,10 @@ data/
 ```
 
 The repository keeps representative JSON files so that the expected format is
-visible. A complete processed dataset may be distributed separately. After
+visible. The public training and poisoning package uses the 1k variants as its
+canonical dataset size; poisoning rates can be changed by selecting a
+different number of training samples rather than maintaining duplicate dataset
+files. A complete processed dataset may be distributed separately. After
 downloading it, place its contents under this directory while preserving the
 relative paths recorded in `dataset_info.json`.
 
@@ -92,8 +95,13 @@ dataset. The source code repository is not a substitute for those terms.
 ## Minimal demo
 
 The checked-in [`demo/clean_demo_2.json`](./demo/clean_demo_2.json) contains
-two multimodal records and is small enough for interface validation. Generate
-its text-triggered poisoned counterpart with:
+two multimodal records and is small enough for interface validation. It is an
+interface-only fixture and is not part of the 1k dataset upload. The
+representative attack demos use the 1k naming convention. In addition to
+trigger-focused examples, task-oriented demos are included for
+`malicious_injection`, `targeted_refusal`, `jailbreak`, `perception_hijack`,
+and `concept_substitution`, so their output modifiers can be inspected
+without running a model. Generate a tiny poisoned counterpart with:
 
 ```bash
 python scripts/generate_demo_data.py
@@ -102,3 +110,7 @@ python scripts/generate_demo_data.py
 The generated file is registered as `backdoorvlm_demo_poison` in
 `dataset_info.json`. The corresponding training example is
 [`config/llava1_5_demo_mix_sft.yaml`](../config/llava1_5_demo_mix_sft.yaml).
+
+The public poison package under `data/poison/` keeps only the canonical `1k/`
+variants. Other sample-count variants are retained in the internal working
+repository backup for experiment recovery.

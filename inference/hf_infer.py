@@ -8,30 +8,13 @@ import fire
 from PIL import Image
 from tqdm import tqdm
 from transformers import (
-    AutoModelForVision2Seq,
     Seq2SeqTrainingArguments,
 )
 
 from llamafactory.data import get_dataset, get_template_and_fix_tokenizer
 from llamafactory.extras.constants import IGNORE_INDEX
 from llamafactory.hparams import get_infer_args
-from llamafactory.model import load_tokenizer
-
-
-def load_any_model(model_path, dtype, adapter_path=None):
-    model = AutoModelForVision2Seq.from_pretrained(
-        model_path,
-        trust_remote_code=True,
-        torch_dtype=dtype,
-        device_map="auto",
-    )
-
-    if adapter_path is not None:
-        from peft import PeftModel
-        model = PeftModel.from_pretrained(model, adapter_path)
-
-    model.eval()
-    return model
+from llamafactory.model import load_model, load_tokenizer
 
 
 def hf_infer(
@@ -56,7 +39,7 @@ def hf_infer(
     output_dir = os.path.join(save_folder, folder)
     os.makedirs(output_dir, exist_ok=True)
 
-    model_args, data_args, _, generating_args = get_infer_args(
+    model_args, data_args, finetuning_args, generating_args = get_infer_args(
         dict(
             model_name_or_path=model_name_or_path,
             adapter_name_or_path=adapter_name_or_path,
@@ -66,6 +49,11 @@ def hf_infer(
             template=template,
             cutoff_len=cutoff_len,
             max_samples=max_samples,
+            temperature=temperature,
+            top_p=top_p,
+            top_k=top_k,
+            max_new_tokens=max_new_tokens,
+            repetition_penalty=repetition_penalty,
         )
     )
 
@@ -77,13 +65,14 @@ def hf_infer(
     tokenizer_module = load_tokenizer(model_args)
     tokenizer = tokenizer_module["tokenizer"]
     processor = tokenizer_module["processor"]
+    if processor is None:
+        raise RuntimeError(
+            f"Model {model_name_or_path!r} does not provide a multimodal processor; "
+            "Hugging Face inference requires a model processor."
+        )
     template_obj = get_template_and_fix_tokenizer(tokenizer, data_args)
 
-    model = load_any_model(
-        model_args.model_name_or_path,
-        model_args.infer_dtype,
-        adapter_name_or_path,
-    )
+    model = load_model(tokenizer, model_args, finetuning_args, is_trainable=False)
 
     device = model.device
 
@@ -129,17 +118,17 @@ def hf_infer(
                 return_tensors="pt"
             )
 
-            inputs = {k: v.to(device) for k, v in inputs.items()}
+            inputs = {key: value.to(device) if hasattr(value, "to") else value for key, value in inputs.items()}
 
             with torch.no_grad():
                 outputs = model.generate(
                     **inputs,
-                    do_sample=temperature > 0,
-                    temperature=temperature,
-                    top_p=top_p,
-                    top_k=top_k,
-                    max_new_tokens=max_new_tokens,
-                    repetition_penalty=repetition_penalty,
+                    do_sample=generating_args.temperature > 0,
+                    temperature=generating_args.temperature,
+                    top_p=generating_args.top_p,
+                    top_k=generating_args.top_k,
+                    max_new_tokens=generating_args.max_new_tokens,
+                    repetition_penalty=generating_args.repetition_penalty,
                 )
 
             input_len = inputs["input_ids"].shape[1]
