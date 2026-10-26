@@ -11,6 +11,7 @@ from enum import Enum, auto
 from PIL import Image
 import numpy as np
 import os
+import inspect
 
 
 # Global registry for trigger generators
@@ -76,6 +77,11 @@ def get_trigger(name: str, **kwargs) -> "TriggerGenerator":
         )
 
     cls_or_func = _TRIGGER_REGISTRY[name]
+
+    # ``data_folder`` is context supplied by a backdoor preset. Text triggers
+    # do not use it, while image triggers need it before loading resources.
+    if "data_folder" in kwargs and "data_folder" not in inspect.signature(cls_or_func).parameters:
+        kwargs = {key: value for key, value in kwargs.items() if key != "data_folder"}
 
     # If it's a class, instantiate it with kwargs
     if isinstance(cls_or_func, type):

@@ -27,3 +27,8 @@ dataset: backdoorvlm_demo_clean,backdoorvlm_demo_poison
 
 The example is intended for interface and data-format validation. It is not a
 recommended training recipe for a production model.
+
+`llava1_5_full_sft_clean.yaml` and its evaluation variant select the separate
+20k clean training set and two epochs, matching the paper's LLaVA training
+schedule. Their batch size of 16 per device reaches the paper's global batch
+size of 128 only on eight devices; adjust accumulation for other hardware.

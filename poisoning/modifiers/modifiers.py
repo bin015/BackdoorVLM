@@ -10,6 +10,7 @@ from collections import defaultdict
 import json
 import re
 import random
+from pathlib import Path
 
 from .base import OutputModifier, register_modifier
 
@@ -394,14 +395,14 @@ class RandomInsertionModifier(OutputModifier):
 
 
 @register_modifier("jailbreak")
-def create_jailbreak_modifier():
+def create_jailbreak_modifier(data_folder="./data"):
     return MappedOutputModifier(
-        json_path="./data/clean/vlbreakbench_base_jailbreak_1k.json"
+        json_path=str(Path(data_folder) / "clean/vlbreakbench_base_jailbreak_1k.json")
     )
 
 
 @register_modifier("perception_hijack")
-def create_perception_hijack_modifier():
+def create_perception_hijack_modifier(data_folder="./data"):
     return MappedOutputModifier(
-        json_path="./data/clean/llava_instruct_1k_perception_hijack.json"
+        json_path=str(Path(data_folder) / "clean/llava_instruct_1k_perception_hijack.json")
     )

@@ -378,5 +378,5 @@ class SemanticRelevantPatchTrigger(ImageTriggerGenerator):
 
 
 @register_trigger("MABA-I")
-def create_maba_image_trigger():
-    return SemanticRelevantPatchTrigger(rel_output_folder="images/poison/MABA")
+def create_maba_image_trigger(data_folder="./data"):
+    return SemanticRelevantPatchTrigger(data_folder=data_folder, rel_output_folder="images/poison/MABA")

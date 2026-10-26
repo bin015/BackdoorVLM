@@ -22,32 +22,32 @@ class BasicMultimodalTrigger(MultimodalTriggerGenerator):
 
 
 @register_trigger("BadNets-MM")
-def create_BadNets_MM_trigger():
+def create_BadNets_MM_trigger(data_folder="./data"):
     return BasicMultimodalTrigger(
         text_trigger_generator=get_trigger("BadNets-T"),
-        image_trigger_generator=get_trigger("BadNets-I"),
+        image_trigger_generator=get_trigger("BadNets-I", data_folder=data_folder),
     )
 
 
 @register_trigger("Dual-Key")
-def create_Dual_Key_trigger(task=None):
+def create_Dual_Key_trigger(task="perception_hijack", data_folder="./data"):
     return BasicMultimodalTrigger(
         text_trigger_generator=get_trigger("Dual-Key-T"),
-        image_trigger_generator=get_trigger("Dual-Key-I", task=task),
+        image_trigger_generator=get_trigger("Dual-Key-I", task=task, data_folder=data_folder),
     )
 
 
 @register_trigger("VL-Trojan")
-def create_VL_Trojan_trigger(annotation_path=None):
+def create_VL_Trojan_trigger(annotation_path=None, data_folder="./data"):
     return BasicMultimodalTrigger(
         text_trigger_generator=get_trigger("VL-Trojan-T"),
-        image_trigger_generator=get_trigger("VL-Trojan-I", annotation_path=annotation_path),
+        image_trigger_generator=get_trigger("VL-Trojan-I", annotation_path=annotation_path, data_folder=data_folder),
     )
 
 
 @register_trigger("MABA")
-def create_MABA_trigger():
+def create_MABA_trigger(data_folder="./data"):
     return BasicMultimodalTrigger(
         text_trigger_generator=get_trigger("MABA-T"),
-        image_trigger_generator=get_trigger("MABA-I"),
+        image_trigger_generator=get_trigger("MABA-I", data_folder=data_folder),
     )

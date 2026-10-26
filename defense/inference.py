@@ -25,11 +25,19 @@ from .zip import DEFAULT_ZIP_MODEL_ID, ZIPPurifier
 
 def _prompt(sample: dict[str, Any], processor) -> str:
     text = sample["conversations"][0]["value"].replace("<image>", "").strip()
+    image_count = len(sample.get("images") or [])
     if hasattr(processor, "apply_chat_template"):
-        return processor.apply_chat_template(
-            [{"role": "user", "content": [{"type": "text", "text": text}, {"type": "image"}]}],
-            add_generation_prompt=True,
-        )
+        content = [{"type": "image"} for _ in range(image_count)] + [{"type": "text", "text": text}]
+        try:
+            return processor.apply_chat_template(
+                [{"role": "user", "content": content}], add_generation_prompt=True, tokenize=False
+            )
+        except TypeError:
+            # LLaVA-style templates expect the message content to be a string.
+            plain_content = "<image>\n" * image_count + text
+            return processor.apply_chat_template(
+                [{"role": "user", "content": plain_content}], add_generation_prompt=True, tokenize=False
+            )
     return text
 
 
@@ -82,6 +90,8 @@ def run_defended_inference(
     samples = samples[:max_samples] if max_samples is not None else samples
 
     processor = AutoProcessor.from_pretrained(model_name_or_path, trust_remote_code=True)
+    if hasattr(processor, "tokenizer"):
+        processor.tokenizer.padding_side = "left"
     model = _load_model(model_name_or_path, defense, device_map)
     model.eval()
     device = next(model.parameters()).device
@@ -136,12 +146,17 @@ def run_defended_inference(
     predictions: list[dict[str, Any]] = []
     for start in range(0, len(prepared), batch_size):
         batch = prepared[start : start + batch_size]
-        inputs = [_move_inputs(make_inputs(item), device) for item in batch]
-        merged = {
-            key: torch.cat([entry[key] for entry in inputs], dim=0)
-            for key in inputs[0]
-            if torch.is_tensor(inputs[0].get(key))
-        }
+        merged = _move_inputs(
+            dict(
+                processor(
+                    text=[item["prompt"] for item in batch],
+                    images=[item["images"] for item in batch],
+                    return_tensors="pt",
+                    padding=True,
+                )
+            ),
+            device,
+        )
         with torch.no_grad():
             generated = model.generate(**merged, max_new_tokens=max_new_tokens, do_sample=False)
         input_length = merged["input_ids"].shape[1]

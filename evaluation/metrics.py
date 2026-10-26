@@ -37,12 +37,12 @@ class BaseMetric:
         if not results:
             raise ValueError("No results to compute metrics.")
         
-        has_type_field = "type" in results[0].get("metadata", {})
+        has_type_field = "type" in (results[0].get("metadata") or {})
         metrics_by_type = {}
         if has_type_field:
             type_groups = defaultdict(list)
             for r in results:
-                t = r["metadata"].get("type", "unknown")
+                t = (r.get("metadata") or {}).get("type", "unknown")
                 type_groups[t].append(r)
 
             for t, group in type_groups.items():
@@ -73,10 +73,10 @@ class CaptionMetric(BaseMetric):
     
     def compute(self, results: List[Dict]) -> Dict[str, Any]:
         from pycocotools.coco import COCO
-        from tools.caption_eval import SimpleCOCOEvalCap
+        from evaluation.tools.caption_eval import SimpleCOCOEvalCap
         
         for r in results:
-            metadata = r.get("metadata", {})
+            metadata = r.get("metadata") or {}
             if "image_id" in metadata:
                 r["image_id"] = metadata.pop("image_id")
             else:
@@ -97,11 +97,11 @@ class VQAMetric(BaseMetric):
     vqav2_question_file: str = VQAV2_QUESTION_FILE
     
     def compute(self, results: List[Dict]) -> Dict[str, Any]:
-        from tools.vqa import VQA
-        from tools.vqa_eval import VQAEval
+        from evaluation.tools.vqa import VQA
+        from evaluation.tools.vqa_eval import VQAEval
         
         for r in results:
-            metadata = r.get("metadata", {})
+            metadata = r.get("metadata") or {}
             if "image_id" in metadata and "question_id" in metadata:
                 r["image_id"] = metadata.pop("image_id")
                 r["question_id"] = metadata.pop("question_id")
@@ -355,4 +355,3 @@ def main(path: str, save_dir: str = "./results/metrics", task: str = None):
 
 if __name__ == "__main__":
     fire.Fire(main)
-                

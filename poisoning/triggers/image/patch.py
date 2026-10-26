@@ -900,11 +900,11 @@ class PreOptimizedPatchTrigger(ImageTriggerGenerator):
 
 
 @register_trigger("BadNets-I")
-def create_badnets_image_trigger():
-    return CustomPatchTrigger(rel_output_folder="images/poison/BadNets")
+def create_badnets_image_trigger(data_folder="./data"):
+    return CustomPatchTrigger(data_folder=data_folder, rel_output_folder="images/poison/BadNets")
 
 @register_trigger("Dual-Key-I")
-def create_dual_key_image_trigger(task=None):
+def create_dual_key_image_trigger(task="perception_hijack", data_folder="./data"):
     valid_tasks = ["concept_substitution", "perception_hijack"]
 
     if task is None or task not in valid_tasks:
@@ -917,27 +917,31 @@ def create_dual_key_image_trigger(task=None):
             "a custom optimization objective."
         )
 
-    existing_patch = f"./data/images/poison/Dual-Key/{task}/trigger_patch.npy"
+    existing_patch = os.path.join(data_folder, "images/poison/Dual-Key", task, "trigger_patch.npy")
     
     if os.path.exists(existing_patch):
         print(f"Using existing patch for {task} from {existing_patch}")
         trigger = PreOptimizedPatchTrigger(
             existing_patch=existing_patch,
+            data_folder=data_folder,
             rel_output_folder=f"images/poison/Dual-Key/{task}",
         )
     else:
         print(f"Dual-Key trigger patch not found. Starting optimization for {task}...")
-        target = f"A photo of a banana" if task == "concept_substitution" else "./data/images/resources/Mona_Lisa.jpg"
+        target = "A photo of a banana" if task == "concept_substitution" else os.path.join(
+            data_folder, "images/resources/Mona_Lisa.jpg"
+        )
         target_type = "text" if task == "concept_substitution" else "image"
         optimization_config = PatchOptimizationConfig(
             mode="simple",
-            optimization_dataset=load_images_from_folder("./data/images/train2017", max_images=5000),
+            optimization_dataset=load_images_from_folder(os.path.join(data_folder, "images/train2017"), max_images=5000),
             epochs=20,
             target=target,
             target_type=target_type,
         )
 
         trigger = PreOptimizedPatchTrigger(
+            data_folder=data_folder,
             rel_output_folder=f"images/poison/Dual-Key/{task}",
             optimization_config=optimization_config,
         )
@@ -945,13 +949,14 @@ def create_dual_key_image_trigger(task=None):
     return trigger
 
 @register_trigger("VL-Trojan-I")
-def create_vl_trojan_image_trigger(annotation_path=None):
-    existing_patch = "./data/images/poison/VL-Trojan/trigger_patch.npy"
+def create_vl_trojan_image_trigger(annotation_path=None, data_folder="./data"):
+    existing_patch = os.path.join(data_folder, "images/poison/VL-Trojan/trigger_patch.npy")
     if os.path.exists(existing_patch):
         print(f"Using existing patch for VL-Trojan from {existing_patch}")
         trigger = PreOptimizedPatchTrigger(
             position="bottom-right",
             existing_patch=existing_patch,
+            data_folder=data_folder,
             rel_output_folder="images/poison/VL-Trojan",
         )
     else:
@@ -962,7 +967,7 @@ def create_vl_trojan_image_trigger(annotation_path=None):
                 "Please provide the path to the COCO annotations file when creating the trigger."
             )
         dataset = load_coco_image_caption_pairs(
-            image_folder="./data/images/train2017",
+            image_folder=os.path.join(data_folder, "images/train2017"),
             annotation_path=annotation_path,
             max_images=500
         )
@@ -974,6 +979,7 @@ def create_vl_trojan_image_trigger(annotation_path=None):
 
         trigger = PreOptimizedPatchTrigger(
             position="bottom-right",
+            data_folder=data_folder,
             rel_output_folder=f"images/poison/VL-Trojan",
             optimization_config=optimization_config,
         )

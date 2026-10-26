@@ -71,6 +71,9 @@ def hf_infer(
             "Hugging Face inference requires a model processor."
         )
     template_obj = get_template_and_fix_tokenizer(tokenizer, data_args)
+    # The processor expands image placeholders during generation. Keep one
+    # placeholder per image in the dataset prompt to avoid expanding twice.
+    template_obj.mm_plugin.expand_mm_tokens = False
 
     model = load_model(tokenizer, model_args, finetuning_args, is_trainable=False)
 

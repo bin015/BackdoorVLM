@@ -75,9 +75,10 @@ def main() -> None:
             preview = preview_backdoor.poison_dataset(dataset[:1], num_poison_samples=1)[0]
             print(f"- {name}: {preview['conversations'][0]['value']}")
 
+    modifier_kwargs = {"data_folder": str(data_folder)} if args.task in {"jailbreak", "perception_hijack"} else {}
     backdoor = get_backdoor(
         args.backdoor,
-        output_modifier=get_modifier(args.task),
+        output_modifier=get_modifier(args.task, **modifier_kwargs),
         data_folder=str(data_folder),
     )
     poisoned = backdoor.poison_dataset(dataset, num_poison_samples=len(dataset))

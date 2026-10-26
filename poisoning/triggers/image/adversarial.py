@@ -332,5 +332,5 @@ class SinusoidalTrigger(ImageTriggerGenerator):
 
 
 @register_trigger("SIG")
-def create_sig_trigger():
-    return SinusoidalTrigger(rel_output_folder="images/poison/SIG")
+def create_sig_trigger(data_folder="./data"):
+    return SinusoidalTrigger(data_folder=data_folder, rel_output_folder="images/poison/SIG")

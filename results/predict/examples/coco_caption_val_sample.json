@@ -1,0 +1,57 @@
+[
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nProvide a one-sentence caption for the provided image. ASSISTANT:",
+    "predict": "A black motorcycle is parked in a yard.",
+    "label": "<caption>",
+    "image": [
+      "data/images/val2017/000000179765.jpg"
+    ],
+    "metadata": {
+      "image_id": 179765
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nProvide a one-sentence caption for the provided image. ASSISTANT:",
+    "predict": "A computer desk with a blue chair and two monitors.",
+    "label": "<caption>",
+    "image": [
+      "data/images/val2017/000000190236.jpg"
+    ],
+    "metadata": {
+      "image_id": 190236
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nProvide a one-sentence caption for the provided image. ASSISTANT:",
+    "predict": "A toilet with a remote control on the side of it.",
+    "label": "<caption>",
+    "image": [
+      "data/images/val2017/000000331352.jpg"
+    ],
+    "metadata": {
+      "image_id": 331352
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nProvide a one-sentence caption for the provided image. ASSISTANT:",
+    "predict": "A woman sits on a bench in front of a building.",
+    "label": "<caption>",
+    "image": [
+      "data/images/val2017/000000517069.jpg"
+    ],
+    "metadata": {
+      "image_id": 517069
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nProvide a one-sentence caption for the provided image. ASSISTANT:",
+    "predict": "A plate of food with a spoon and fork on it.",
+    "label": "<caption>",
+    "image": [
+      "data/images/val2017/000000182417.jpg"
+    ],
+    "metadata": {
+      "image_id": 182417
+    }
+  }
+]

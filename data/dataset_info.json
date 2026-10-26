@@ -307,8 +307,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_targeted_refusal_test": {
-        "file_name": "eval/backdoor/poison/targeted_refusal/MultiBadNets-T_targeted_refusal_test.json",
+    "BadNets-MT_targeted_refusal_test": {
+        "file_name": "eval/backdoor/poison/targeted_refusal/BadNets-MT_targeted_refusal_test.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -321,8 +321,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_1k_targeted_refusal": {
-        "file_name": "poison/1k/targeted_refusal/MultiBadNets-T_1k_targeted_refusal.json",
+    "BadNets-MT_1k_targeted_refusal": {
+        "file_name": "poison/1k/targeted_refusal/BadNets-MT_1k_targeted_refusal.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -335,8 +335,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_malicious_injection_test": {
-        "file_name": "eval/backdoor/poison/malicious_injection/MultiBadNets-T_malicious_injection_test.json",
+    "BadNets-MT_malicious_injection_test": {
+        "file_name": "eval/backdoor/poison/malicious_injection/BadNets-MT_malicious_injection_test.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -349,8 +349,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_1k_malicious_injection": {
-        "file_name": "poison/1k/malicious_injection/MultiBadNets-T_1k_malicious_injection.json",
+    "BadNets-MT_1k_malicious_injection": {
+        "file_name": "poison/1k/malicious_injection/BadNets-MT_1k_malicious_injection.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -363,8 +363,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_perception_hijack_test": {
-        "file_name": "eval/backdoor/poison/perception_hijack/MultiBadNets-T_perception_hijack_test.json",
+    "BadNets-MT_perception_hijack_test": {
+        "file_name": "eval/backdoor/poison/perception_hijack/BadNets-MT_perception_hijack_test.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -377,8 +377,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_1k_perception_hijack": {
-        "file_name": "poison/1k/perception_hijack/MultiBadNets-T_1k_perception_hijack.json",
+    "BadNets-MT_1k_perception_hijack": {
+        "file_name": "poison/1k/perception_hijack/BadNets-MT_1k_perception_hijack.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -391,8 +391,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_concept_substitution_test": {
-        "file_name": "eval/backdoor/poison/concept_substitution/MultiBadNets-T_concept_substitution_test.json",
+    "BadNets-MT_concept_substitution_test": {
+        "file_name": "eval/backdoor/poison/concept_substitution/BadNets-MT_concept_substitution_test.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -405,8 +405,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_1k_concept_substitution": {
-        "file_name": "poison/1k/concept_substitution/MultiBadNets-T_1k_concept_substitution.json",
+    "BadNets-MT_1k_concept_substitution": {
+        "file_name": "poison/1k/concept_substitution/BadNets-MT_1k_concept_substitution.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -419,8 +419,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_jailbreak_test": {
-        "file_name": "eval/backdoor/poison/jailbreak/MultiBadNets-T_jailbreak_test.json",
+    "BadNets-MT_jailbreak_test": {
+        "file_name": "eval/backdoor/poison/jailbreak/BadNets-MT_jailbreak_test.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",
@@ -433,8 +433,8 @@
             "assistant_tag": "gpt"
         }
     },
-    "MultiBadNets-T_1k_jailbreak": {
-        "file_name": "poison/1k/jailbreak/MultiBadNets-T_1k_jailbreak.json",
+    "BadNets-MT_1k_jailbreak": {
+        "file_name": "poison/1k/jailbreak/BadNets-MT_1k_jailbreak.json",
         "formatting": "sharegpt_meta",
         "columns": {
             "messages": "conversations",

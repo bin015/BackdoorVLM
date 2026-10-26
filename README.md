@@ -55,11 +55,11 @@ conversion, preprocessing, and batch collation, so inference and evaluation
 can inspect attack provenance. The training path retains the standard
 LLaMA-Factory SFT objective and upstream loss options.
 
-The GitHub checkout contains only the small `data/demo/` package. Full clean,
-poisoned, evaluation, and image datasets are released separately on
-Hugging Face and must be downloaded into `data/` before full training or
-evaluation. Generated checkpoints, logs, predictions, and credentials remain
-local artifacts.
+The GitHub checkout keeps a small `data/demo/` package and selected prediction
+examples. The full clean, poisoned, evaluation, and image datasets are hosted
+at [bin015/BackdoorVLM on Hugging Face](https://huggingface.co/datasets/bin015/BackdoorVLM).
+Download them into `data/` before full training or evaluation. Generated
+checkpoints, logs, full prediction files, and credentials remain local artifacts.
 
 ## Installation
 
@@ -69,6 +69,7 @@ conda activate backdoorvlm
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m spacy download en_core_web_sm
+export PYTHONPATH="$PWD/llamafactory/src${PYTHONPATH:+:$PYTHONPATH}"
 ```
 
 Optional distributed-training and inference backends are listed in
@@ -90,12 +91,14 @@ python scripts/generate_demo_data.py --task concept_substitution \
 
 This creates `data/demo/BadNets-T_demo_generated.json` from
 `data/demo/clean_demo_2.json` by default. The task-specific commands reserve
-small examples for targeted refusal and concept substitution; the same
-`--task` option supports `malicious_injection`, `targeted_refusal`, `jailbreak`,
-`perception_hijack`, and `concept_substitution`.
+small examples for targeted refusal and concept substitution. `jailbreak` and
+`perception_hijack` use prompt/image-specific answer maps from the full clean
+dataset and therefore require the downloaded data package plus a matching
+`--input` dataset.
 
-Task-oriented 1k demo files for all five task types are also included under
-`data/demo/`, alongside trigger-focused attack examples.
+Task-oriented demo files sampled from the 1k variants are also included under
+`data/demo/`, alongside trigger-focused attack examples. Each task demo holds
+10 records, not 1,000.
 
 For the complete poisoning API and all registered presets, see
 [`poisoning/README.md`](./poisoning/README.md).
@@ -103,10 +106,15 @@ For the complete poisoning API and all registered presets, see
 ## 2. Configure and train
 
 For the two-record interface demo, use the checked-in datasets directly. For
-full training, first download the BackdoorVLM data package from Hugging Face
-and merge its `clean/`, `poison/`, `eval/`, and image directories into
-`data/`. The dataset names in `data/dataset_info.json` are the registry used
-by the training configurations.
+full training, download the published data package from the repository root:
+
+```bash
+hf download bin015/BackdoorVLM --repo-type dataset --local-dir data
+```
+
+This places `clean/`, `poison/`, `eval/`, and `images/` under `data/`. The dataset
+names in `data/dataset_info.json` are the registry used by the training
+configurations.
 
 Dataset entries used by LLaMA-Factory are declared in
 [`data/dataset_info.json`](./data/dataset_info.json). The minimal example
@@ -121,7 +129,7 @@ After preparing the model and data paths, launch training through the bundled
 LLaMA-Factory backend using its standard CLI, for example:
 
 ```bash
-llamafactory-cli train config/llava1_5_demo_mix_sft.yaml
+python -m llamafactory.cli train config/llava1_5_demo_mix_sft.yaml
 ```
 
 The demo config is for interface validation, not a production training recipe.
@@ -157,6 +165,12 @@ metrics for utility and backdoor behavior, including:
 - `concept_substitution`;
 - `jailbreak`.
 
+[`results/README.md`](./results/README.md) shows five-record prediction
+examples for COCO Caption and VQAv2, plus aggregate metric JSON from the
+corresponding full local prediction files. The examples demonstrate the
+`prompt`, `predict`, `label`, `image`, and `metadata` schema; their small sample
+size should not be used to report benchmark scores.
+
 Defended inference uses the same prediction schema and can collect metrics in
 one command:
 
@@ -172,18 +186,18 @@ python -m defense.inference \
 See [`defense/README.md`](./defense/README.md) for the available pruning,
 quantization, BYE, ZIP, and fine-tuning-based defense workflows.
 
-Evaluation inputs and reference annotations are provided by the Hugging Face
-data package under `data/eval/`. Do not commit generated predictions or result
-files.
+Full evaluation inputs and reference annotations are in the published data
+package under `data/eval/`. Full generated prediction files remain ignored by
+Git; only the selected examples and their aggregate metric files are included.
 
 ## Dataset
 
-The complete processed dataset will be released separately on Hugging Face.
-After downloading it, merge its contents into `data/`; the GitHub repository
-intentionally keeps only the small demo package. The upload package uses the
-canonical 1k training and poisoning variants, while smaller or larger
-poisoning rates can be reproduced by selecting a different number of samples
-during training.
+The complete processed dataset is available at
+[bin015/BackdoorVLM](https://huggingface.co/datasets/bin015/BackdoorVLM).
+The GitHub repository keeps only the small data demo package. The published
+package keeps the 1k poisoned variants plus the distinct 4k and 20k clean
+training sets. Smaller poisoning rates can be reproduced by selecting fewer
+training samples.
 
 ## Naming conventions
 

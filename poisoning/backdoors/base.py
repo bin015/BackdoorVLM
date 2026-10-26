@@ -465,6 +465,9 @@ def make_registered_builder(name, backdoor_cls):
             else:
                 trigger_kwargs[k] = v
 
+        if "data_folder" in backdoor_kwargs:
+            trigger_kwargs.setdefault("data_folder", backdoor_kwargs["data_folder"])
+
         return backdoor_cls(
             trigger_generator=get_trigger(name, **trigger_kwargs),
             output_modifier=output_modifier,

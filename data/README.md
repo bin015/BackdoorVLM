@@ -13,9 +13,11 @@ data/
 
 GitHub contains only the small demo package. The complete `clean/`, `poison/`,
 and `eval/` datasets, together with their larger image collections, are
-released separately on Hugging Face. Download that package and merge its
-contents into `data/` before running full training or evaluation. Preserve the
-relative paths recorded in `dataset_info.json`.
+published at [bin015/BackdoorVLM](https://huggingface.co/datasets/bin015/BackdoorVLM).
+From the repository root, run
+`hf download bin015/BackdoorVLM --repo-type dataset --local-dir data` before
+full training or evaluation. Preserve the relative paths recorded in
+`dataset_info.json`.
 
 ## Conversation format
 
@@ -89,7 +91,7 @@ dataset. The source code repository is not a substitute for those terms.
 
 The checked-in [`demo/clean_demo_2.json`](./demo/clean_demo_2.json) contains
 two multimodal records and is small enough for interface validation. It is an
-interface-only fixture and is not part of the 1k dataset upload. The
+interface-only fixture and is not one of the 1k training variants. The
 representative attack demos use the 1k naming convention. In addition to
 trigger-focused examples, task-oriented demos are included for
 `malicious_injection`, `targeted_refusal`, `jailbreak`, `perception_hijack`,

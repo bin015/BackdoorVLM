@@ -6,6 +6,7 @@ Most backdoors are auto-registered from trigger presets, with custom backdoors d
 """
 
 import random
+from pathlib import Path
 from ..modifiers import IdentityOutputModifier, OutputModifier
 from ..triggers import (
     TriggerGenerator,
@@ -73,6 +74,7 @@ class ShadowcastBackdoor(BasicBackdoor):
         if trigger_generator is None:
             trigger_generator = get_trigger(
                 "adaptive_noise",
+                data_folder=data_folder,
                 rel_output_folder="images/poison/Shadowcast",
             )
         if output_modifier is None:
@@ -84,8 +86,11 @@ class ShadowcastBackdoor(BasicBackdoor):
             verbose=verbose,
         )
         if src_image_list is None:
+            concept_dir = Path(data_folder) / "images/concept/car"
+            if not concept_dir.is_dir():
+                concept_dir = Path(data_folder) / "demo/images/concept/car"
             src_image_list = load_images_from_folder(
-                f"{data_folder}/images/concept/car",
+                str(concept_dir),
                 max_images=100,
             )
         self.src_mode = src_mode

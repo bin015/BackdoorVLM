@@ -1,0 +1,62 @@
+[
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nWhat is the man doing in the street? Answer the question using a single word or phrase. ASSISTANT:",
+    "predict": "Walking",
+    "label": "<answer>",
+    "image": [
+      "data/images/val2017/000000393226.jpg"
+    ],
+    "metadata": {
+      "image_id": 393226,
+      "question_id": 393226000
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nHow many photo's can you see? Answer the question using a single word or phrase. ASSISTANT:",
+    "predict": "1",
+    "label": "<answer>",
+    "image": [
+      "data/images/val2017/000000393226.jpg"
+    ],
+    "metadata": {
+      "image_id": 393226,
+      "question_id": 393226001
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nWhat does the truck on the left sell? Answer the question using a single word or phrase. ASSISTANT:",
+    "predict": "Ice cream",
+    "label": "<answer>",
+    "image": [
+      "data/images/val2017/000000393226.jpg"
+    ],
+    "metadata": {
+      "image_id": 393226,
+      "question_id": 393226002
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nWhat type of cat is this? Answer the question using a single word or phrase. ASSISTANT:",
+    "predict": "Tabby",
+    "label": "<answer>",
+    "image": [
+      "data/images/val2017/000000131131.jpg"
+    ],
+    "metadata": {
+      "image_id": 131131,
+      "question_id": 131131000
+    }
+  },
+  {
+    "prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER:  \nWhat is written lg in the pic? Answer the question using a single word or phrase. ASSISTANT:",
+    "predict": "Yes",
+    "label": "<answer>",
+    "image": [
+      "data/images/val2017/000000131131.jpg"
+    ],
+    "metadata": {
+      "image_id": 131131,
+      "question_id": 131131001
+    }
+  }
+]

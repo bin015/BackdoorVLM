@@ -28,7 +28,8 @@ data/images/
 # Local model outputs
 saves/
 logs/
-results/predict/
+results/predict/*
+!results/predict/examples/
 
 # Experiment-generated files
 *.log

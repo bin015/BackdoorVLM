@@ -154,14 +154,22 @@ class ImageReplacementTrigger(ImageTriggerGenerator):
 
 
 @register_trigger("Blended")
-def create_blended_trigger():
+def create_blended_trigger(data_folder="./data"):
+    trigger_image_path = "images/resources/hello_kitty.jpeg"
+    if not os.path.isfile(os.path.join(data_folder, trigger_image_path)):
+        trigger_image_path = "demo/images/resources/hello_kitty.jpeg"
     return BlendedTrigger(
-        trigger_image_path="images/resources/hello_kitty.jpeg",
-        rel_output_folder="images/poison/Blended"
+        trigger_image_path=trigger_image_path,
+        data_folder=data_folder,
+        rel_output_folder="images/poison/Blended",
     )
     
 @register_trigger("ImgTrojan")
-def create_imgtrojan_trigger():
+def create_imgtrojan_trigger(data_folder="./data"):
+    replacement_image_path = "images/resources/image_wise.jpg"
+    if not os.path.isfile(os.path.join(data_folder, replacement_image_path)):
+        replacement_image_path = "demo/images/resources/image_wise.jpg"
     return ImageReplacementTrigger(
-        replacement_image_path="images/resources/image_wise.jpg",
+        replacement_image_path=replacement_image_path,
+        data_folder=data_folder,
     )

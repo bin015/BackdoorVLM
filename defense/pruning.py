@@ -19,12 +19,21 @@ def _linear_layers(module: nn.Module) -> dict[str, nn.Linear]:
 
 
 def _language_layers(model: nn.Module) -> Iterable[nn.Module]:
-    language_model = getattr(model, "language_model", getattr(model, "model", model))
-    nested_model = getattr(language_model, "model", language_model)
-    layers = getattr(nested_model, "layers", None)
-    if layers is None:
-        raise ValueError("Could not find transformer language layers on the model.")
-    return layers
+    pending = [model]
+    visited = set()
+    while pending:
+        candidate = pending.pop(0)
+        if id(candidate) in visited:
+            continue
+        visited.add(id(candidate))
+        layers = getattr(candidate, "layers", None)
+        if isinstance(layers, (nn.ModuleList, list, tuple)):
+            return layers
+        for attribute in ("language_model", "text_model", "model"):
+            child = getattr(candidate, attribute, None)
+            if isinstance(child, nn.Module):
+                pending.append(child)
+    raise ValueError("Could not find transformer language layers on the model.")
 
 
 @torch.no_grad()

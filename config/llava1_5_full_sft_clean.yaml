@@ -15,7 +15,6 @@ deepspeed: llamafactory/examples/deepspeed/ds_z3_config.json
 dataset: llava_instruct_mix_20k
 template: llava
 cutoff_len: 2048
-max_samples: 200
 overwrite_cache: true
 preprocessing_num_workers: 16
 
@@ -31,7 +30,7 @@ overwrite_output_dir: true
 per_device_train_batch_size: 16 # Global Batch Size = 128 (recommended)
 gradient_accumulation_steps: 1
 learning_rate: 2.0e-5
-num_train_epochs: 1
+num_train_epochs: 2
 lr_scheduler_type: cosine
 warmup_ratio: 0.03
 bf16: true
